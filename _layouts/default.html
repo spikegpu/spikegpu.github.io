@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width" />
+
+    <title>SPIKE GPU - {{ page.title }}</title>
+
+	<link rel="stylesheet" href="/css/foundation.css">
+	<link rel="stylesheet" href="/css/extra.css">
+	<link rel="stylesheet" href="/css/syntax.css">
+  </head>
+  <body>
+    <div id="sidebar" class="row">
+	  <div class="twelve columns">
+      <ul class="nav-bar">
+          {% for link in site.navigation %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+      </ul>
+	  </div>
+    </div>
+	<div class="row">
+    <div class="twelve columns" role="content">
+        {{content}}
+    </div>
+	</div>
+
+	<footer class="row">
+		<hr />
+		<div class="six columns">
+				This project is funded by the National Science Foundation under collaborative grants SI2-SSE 1147337 (Negrut), SI2-SSE 1147422 (Sameh), and SI2-SSE 1147680 (Knepley).
+		</div>
+		<div class="six columns">
+				Copyright Simulation Based Engineering Laboratory, Dan Negrut 2013
+		</div>
+	</footer>
+  </body>
+</html>
