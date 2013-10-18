@@ -14,3 +14,5 @@ title: Nightly
 
 [10-17-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_17_results.html)
 
+[10-18-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_18_results.html)
+
