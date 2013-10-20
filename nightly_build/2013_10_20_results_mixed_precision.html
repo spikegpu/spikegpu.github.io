@@ -1,0 +1,2622 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html><head><title></title>
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<style type="text/css"><!--
+
+body {
+
+margin: 5px 5px 5px 5px;
+
+background-color: #ffffff;
+
+}
+
+/* ========== Text Styles ========== */
+
+hr { color: #000000}
+
+body, table /* Normal text */
+
+{
+
+font-size: 10pt;
+
+font-family: 'Courier New';
+
+font-style: normal;
+
+font-weight: normal;
+
+color: #000000;
+
+text-decoration: none;
+
+}
+
+span.rvts1 /* Heading */
+
+{
+
+font-family: 'Arial';
+
+font-weight: bold;
+
+color: #0000ff;
+
+}
+
+span.rvts2 /* Subheading */
+
+{
+
+font-family: 'Arial';
+
+font-weight: bold;
+
+color: #000080;
+
+}
+
+span.rvts3 /* Keywords */
+
+{
+
+font-family: 'Arial';
+
+font-style: italic;
+
+color: #800000;
+
+}
+
+a.rvts4, span.rvts4 /* Jump 1 */
+
+{
+
+color: #008000;
+
+text-decoration: underline;
+
+}
+
+a.rvts5, span.rvts5 /* Jump 2 */
+
+{
+
+font-family: 'Arial';
+
+color: #008000;
+
+text-decoration: underline;
+
+}
+
+/* ========== Para Styles ========== */
+
+p,ul,ol /* Paragraph Style */
+
+{
+
+text-align: left;
+
+text-indent: 0px;
+
+padding: 0px 0px 0px 0px;
+
+margin: 0px 0px 0px 0px;
+
+}
+
+.rvps1 /* Centered */
+
+{
+
+text-align: center;
+
+}
+
+--></style>
+
+</head>
+
+<body>
+
+
+
+<p><br></p>
+
+<div><table width="100%" border=1 cellpadding=1 cellspacing=2 style="background-color: #ffffff;">
+
+<tr valign=top>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Mat-name</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Dimension</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>NNZ</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Half-bandwidth</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Solve-it?</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Why-fail?</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>NumParts</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>NumIters</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Time-reorder</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Time-cpu-assemble</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Time-data-trans</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Time-extract-off-diag</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Time-assemble-off-diag</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Time-LU-UL</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Time-LU-reduced</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Time-setup</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Time-Krylov-solve</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Time-total</span></p>
+
+</td>
+
+</tr>
+
+<tr valign=top>
+<td style="border-style: inset;">
+<p>2D_54019_highK.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>54019</p>
+</td>
+<td style="border-style: inset;">
+<p>996414</p>
+</td>
+<td style="border-style: inset;">
+<p>1618</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>597.257</p>
+</td>
+<td style="border-style: inset;">
+<p>484.281</p>
+</td>
+<td style="border-style: inset;">
+<p>516.118</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>7589.85</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>9234.61</p>
+</td>
+<td style="border-style: inset;">
+<p>1114.82</p>
+</td>
+<td style="border-style: inset;">
+<p>10349.4</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>31770-lhs.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>31770</p>
+</td>
+<td style="border-style: inset;">
+<p>183540</p>
+</td>
+<td style="border-style: inset;">
+<p>249</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>16</p>
+</td>
+<td style="border-style: inset;">
+<p>5.25</p>
+</td>
+<td style="border-style: inset;">
+<p>126.661</p>
+</td>
+<td style="border-style: inset;">
+<p>44.867</p>
+</td>
+<td style="border-style: inset;">
+<p>19.002</p>
+</td>
+<td style="border-style: inset;">
+<p>19.0332</p>
+</td>
+<td style="border-style: inset;">
+<p>88.4799</p>
+</td>
+<td style="border-style: inset;">
+<p>37.1023</p>
+</td>
+<td style="border-style: inset;">
+<p>25.172</p>
+</td>
+<td style="border-style: inset;">
+<p>395.307</p>
+</td>
+<td style="border-style: inset;">
+<p>207.892</p>
+</td>
+<td style="border-style: inset;">
+<p>603.199</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>88950-lhs.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>88950</p>
+</td>
+<td style="border-style: inset;">
+<p>513900</p>
+</td>
+<td style="border-style: inset;">
+<p>411</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>16</p>
+</td>
+<td style="border-style: inset;">
+<p>2.75</p>
+</td>
+<td style="border-style: inset;">
+<p>480.081</p>
+</td>
+<td style="border-style: inset;">
+<p>128.243</p>
+</td>
+<td style="border-style: inset;">
+<p>65.506</p>
+</td>
+<td style="border-style: inset;">
+<p>49.1134</p>
+</td>
+<td style="border-style: inset;">
+<p>227.54</p>
+</td>
+<td style="border-style: inset;">
+<p>138.36</p>
+</td>
+<td style="border-style: inset;">
+<p>98.641</p>
+</td>
+<td style="border-style: inset;">
+<p>1275.53</p>
+</td>
+<td style="border-style: inset;">
+<p>297.818</p>
+</td>
+<td style="border-style: inset;">
+<p>1573.35</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>ABACUS_shell_ud.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>23412</p>
+</td>
+<td style="border-style: inset;">
+<p>218484</p>
+</td>
+<td style="border-style: inset;">
+<p>190</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>66.082</p>
+</td>
+<td style="border-style: inset;">
+<p>33.906</p>
+</td>
+<td style="border-style: inset;">
+<p>37.402</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>312.85</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>463.792</p>
+</td>
+<td style="border-style: inset;">
+<p>125.816</p>
+</td>
+<td style="border-style: inset;">
+<p>589.608</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>af23560.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>23560</p>
+</td>
+<td style="border-style: inset;">
+<p>484256</p>
+</td>
+<td style="border-style: inset;">
+<p>361</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>8</p>
+</td>
+<td style="border-style: inset;">
+<p>4.75</p>
+</td>
+<td style="border-style: inset;">
+<p>386.006</p>
+</td>
+<td style="border-style: inset;">
+<p>77.482</p>
+</td>
+<td style="border-style: inset;">
+<p>45.059</p>
+</td>
+<td style="border-style: inset;">
+<p>13.3684</p>
+</td>
+<td style="border-style: inset;">
+<p>107.107</p>
+</td>
+<td style="border-style: inset;">
+<p>112.672</p>
+</td>
+<td style="border-style: inset;">
+<p>29.1665</p>
+</td>
+<td style="border-style: inset;">
+<p>792.415</p>
+</td>
+<td style="border-style: inset;">
+<p>249.444</p>
+</td>
+<td style="border-style: inset;">
+<p>1041.86</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>apache1.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>80800</p>
+</td>
+<td style="border-style: inset;">
+<p>542184</p>
+</td>
+<td style="border-style: inset;">
+<p>792</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>8</p>
+</td>
+<td style="border-style: inset;">
+<p>8.75</p>
+</td>
+<td style="border-style: inset;">
+<p>524.613</p>
+</td>
+<td style="border-style: inset;">
+<p>171.745</p>
+</td>
+<td style="border-style: inset;">
+<p>85.177</p>
+</td>
+<td style="border-style: inset;">
+<p>57.2383</p>
+</td>
+<td style="border-style: inset;">
+<p>631.474</p>
+</td>
+<td style="border-style: inset;">
+<p>270.482</p>
+</td>
+<td style="border-style: inset;">
+<p>298.065</p>
+</td>
+<td style="border-style: inset;">
+<p>2071.71</p>
+</td>
+<td style="border-style: inset;">
+<p>1442.53</p>
+</td>
+<td style="border-style: inset;">
+<p>3514.24</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>bauru5727.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>40366</p>
+</td>
+<td style="border-style: inset;">
+<p>145019</p>
+</td>
+<td style="border-style: inset;">
+<p>2133</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.75</p>
+</td>
+<td style="border-style: inset;">
+<p>169.392</p>
+</td>
+<td style="border-style: inset;">
+<p>434.892</p>
+</td>
+<td style="border-style: inset;">
+<p>479.906</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>8954.67</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>10073.1</p>
+</td>
+<td style="border-style: inset;">
+<p>1601.97</p>
+</td>
+<td style="border-style: inset;">
+<p>11675.1</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>bcircuit.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>68902</p>
+</td>
+<td style="border-style: inset;">
+<p>375558</p>
+</td>
+<td style="border-style: inset;">
+<p>1218</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>263.693</p>
+</td>
+<td style="border-style: inset;">
+<p>440.161</p>
+</td>
+<td style="border-style: inset;">
+<p>474.523</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>6675.71</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>7880.23</p>
+</td>
+<td style="border-style: inset;">
+<p>1118.39</p>
+</td>
+<td style="border-style: inset;">
+<p>8998.62</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>cant.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>62451</p>
+</td>
+<td style="border-style: inset;">
+<p>4007383</p>
+</td>
+<td style="border-style: inset;">
+<p>447</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>1241.91</p>
+</td>
+<td style="border-style: inset;">
+<p>229.444</p>
+</td>
+<td style="border-style: inset;">
+<p>185.253</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>854.573</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>3061.08</p>
+</td>
+<td style="border-style: inset;">
+<p>424.983</p>
+</td>
+<td style="border-style: inset;">
+<p>3486.06</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>cfd1.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>70656</p>
+</td>
+<td style="border-style: inset;">
+<p>1828364</p>
+</td>
+<td style="border-style: inset;">
+<p>3102</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>691.595</p>
+</td>
+<td style="border-style: inset;">
+<p>1242.33</p>
+</td>
+<td style="border-style: inset;">
+<p>1705.89</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>36500.9</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>40232.4</p>
+</td>
+<td style="border-style: inset;">
+<p>2329.45</p>
+</td>
+<td style="border-style: inset;">
+<p>42561.9</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>cont-201.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>80595</p>
+</td>
+<td style="border-style: inset;">
+<p>438795</p>
+</td>
+<td style="border-style: inset;">
+<p>403</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>284.784</p>
+</td>
+<td style="border-style: inset;">
+<p>164.108</p>
+</td>
+<td style="border-style: inset;">
+<p>245.849</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>1225.68</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>1942.01</p>
+</td>
+<td style="border-style: inset;">
+<p>529.749</p>
+</td>
+<td style="border-style: inset;">
+<p>2471.76</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>dawson5.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>51537</p>
+</td>
+<td style="border-style: inset;">
+<p>1010777</p>
+</td>
+<td style="border-style: inset;">
+<p>1317</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>1051.59</p>
+</td>
+<td style="border-style: inset;">
+<p>239.597</p>
+</td>
+<td style="border-style: inset;">
+<p>323.405</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>2823.06</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>4601.75</p>
+</td>
+<td style="border-style: inset;">
+<p>533.542</p>
+</td>
+<td style="border-style: inset;">
+<p>5135.29</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>dixmaanl.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>60000</p>
+</td>
+<td style="border-style: inset;">
+<p>299998</p>
+</td>
+<td style="border-style: inset;">
+<p>7</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>118.379</p>
+</td>
+<td style="border-style: inset;">
+<p>13.835</p>
+</td>
+<td style="border-style: inset;">
+<p>14.375</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>170.465</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>335.577</p>
+</td>
+<td style="border-style: inset;">
+<p>227.768</p>
+</td>
+<td style="border-style: inset;">
+<p>563.345</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>Dubcova2.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>65025</p>
+</td>
+<td style="border-style: inset;">
+<p>1030225</p>
+</td>
+<td style="border-style: inset;">
+<p>864</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>498.783</p>
+</td>
+<td style="border-style: inset;">
+<p>318.46</p>
+</td>
+<td style="border-style: inset;">
+<p>338.534</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>3097.18</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>4300.4</p>
+</td>
+<td style="border-style: inset;">
+<p>597.972</p>
+</td>
+<td style="border-style: inset;">
+<p>4898.37</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>ecl32.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>51993</p>
+</td>
+<td style="border-style: inset;">
+<p>380415</p>
+</td>
+<td style="border-style: inset;">
+<p>1660</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>297.887</p>
+</td>
+<td style="border-style: inset;">
+<p>399.131</p>
+</td>
+<td style="border-style: inset;">
+<p>543.453</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>6934.59</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>8250.28</p>
+</td>
+<td style="border-style: inset;">
+<p>877.224</p>
+</td>
+<td style="border-style: inset;">
+<p>9127.51</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>epb3.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>84617</p>
+</td>
+<td style="border-style: inset;">
+<p>463625</p>
+</td>
+<td style="border-style: inset;">
+<p>284</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>10</p>
+</td>
+<td style="border-style: inset;">
+<p>9.5</p>
+</td>
+<td style="border-style: inset;">
+<p>274.71</p>
+</td>
+<td style="border-style: inset;">
+<p>88.444</p>
+</td>
+<td style="border-style: inset;">
+<p>61.918</p>
+</td>
+<td style="border-style: inset;">
+<p>7.81085</p>
+</td>
+<td style="border-style: inset;">
+<p>216.177</p>
+</td>
+<td style="border-style: inset;">
+<p>198.366</p>
+</td>
+<td style="border-style: inset;">
+<p>18.3555</p>
+</td>
+<td style="border-style: inset;">
+<p>889.225</p>
+</td>
+<td style="border-style: inset;">
+<p>1155.03</p>
+</td>
+<td style="border-style: inset;">
+<p>2044.25</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>ex11.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>16614</p>
+</td>
+<td style="border-style: inset;">
+<p>1096948</p>
+</td>
+<td style="border-style: inset;">
+<p>814</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>8</p>
+</td>
+<td style="border-style: inset;">
+<p>5.25</p>
+</td>
+<td style="border-style: inset;">
+<p>445.006</p>
+</td>
+<td style="border-style: inset;">
+<p>111.364</p>
+</td>
+<td style="border-style: inset;">
+<p>45.146</p>
+</td>
+<td style="border-style: inset;">
+<p>53.0054</p>
+</td>
+<td style="border-style: inset;">
+<p>195.053</p>
+</td>
+<td style="border-style: inset;">
+<p>148.034</p>
+</td>
+<td style="border-style: inset;">
+<p>326.362</p>
+</td>
+<td style="border-style: inset;">
+<p>1360.19</p>
+</td>
+<td style="border-style: inset;">
+<p>307.373</p>
+</td>
+<td style="border-style: inset;">
+<p>1667.56</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>ex19.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>12005</p>
+</td>
+<td style="border-style: inset;">
+<p>259879</p>
+</td>
+<td style="border-style: inset;">
+<p>87</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>6</p>
+</td>
+<td style="border-style: inset;">
+<p>6.25</p>
+</td>
+<td style="border-style: inset;">
+<p>122.159</p>
+</td>
+<td style="border-style: inset;">
+<p>27.197</p>
+</td>
+<td style="border-style: inset;">
+<p>16.181</p>
+</td>
+<td style="border-style: inset;">
+<p>2.66435</p>
+</td>
+<td style="border-style: inset;">
+<p>34.825</p>
+</td>
+<td style="border-style: inset;">
+<p>29.0783</p>
+</td>
+<td style="border-style: inset;">
+<p>3.26387</p>
+</td>
+<td style="border-style: inset;">
+<p>284.933</p>
+</td>
+<td style="border-style: inset;">
+<p>239.861</p>
+</td>
+<td style="border-style: inset;">
+<p>524.794</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>finan512.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>74752</p>
+</td>
+<td style="border-style: inset;">
+<p>596992</p>
+</td>
+<td style="border-style: inset;">
+<p>1320</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>12</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>580.075</p>
+</td>
+<td style="border-style: inset;">
+<p>413.82</p>
+</td>
+<td style="border-style: inset;">
+<p>186.197</p>
+</td>
+<td style="border-style: inset;">
+<p>269.938</p>
+</td>
+<td style="border-style: inset;">
+<p>1582.03</p>
+</td>
+<td style="border-style: inset;">
+<p>1001.67</p>
+</td>
+<td style="border-style: inset;">
+<p>2271.32</p>
+</td>
+<td style="border-style: inset;">
+<p>6341.29</p>
+</td>
+<td style="border-style: inset;">
+<p>225.346</p>
+</td>
+<td style="border-style: inset;">
+<p>6566.64</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>garon2.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>13535</p>
+</td>
+<td style="border-style: inset;">
+<p>390607</p>
+</td>
+<td style="border-style: inset;">
+<p>378</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>2</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>194.427</p>
+</td>
+<td style="border-style: inset;">
+<p>41.152</p>
+</td>
+<td style="border-style: inset;">
+<p>29.147</p>
+</td>
+<td style="border-style: inset;">
+<p>1.7033</p>
+</td>
+<td style="border-style: inset;">
+<p>120.823</p>
+</td>
+<td style="border-style: inset;">
+<p>188.783</p>
+</td>
+<td style="border-style: inset;">
+<p>7.58189</p>
+</td>
+<td style="border-style: inset;">
+<p>595.763</p>
+</td>
+<td style="border-style: inset;">
+<p>77.759</p>
+</td>
+<td style="border-style: inset;">
+<p>673.522</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>gas_sensor.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>66917</p>
+</td>
+<td style="border-style: inset;">
+<p>1703365</p>
+</td>
+<td style="border-style: inset;">
+<p>1789</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>785.925</p>
+</td>
+<td style="border-style: inset;">
+<p>754.961</p>
+</td>
+<td style="border-style: inset;">
+<p>839.88</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>10858.9</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>13329.2</p>
+</td>
+<td style="border-style: inset;">
+<p>1385.3</p>
+</td>
+<td style="border-style: inset;">
+<p>14714.5</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>gridgena.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>48962</p>
+</td>
+<td style="border-style: inset;">
+<p>512084</p>
+</td>
+<td style="border-style: inset;">
+<p>359</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>245.841</p>
+</td>
+<td style="border-style: inset;">
+<p>134.188</p>
+</td>
+<td style="border-style: inset;">
+<p>167.341</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>767.795</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>1342.46</p>
+</td>
+<td style="border-style: inset;">
+<p>309.307</p>
+</td>
+<td style="border-style: inset;">
+<p>1651.76</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>ibm_matrix_2.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>51448</p>
+</td>
+<td style="border-style: inset;">
+<p>1056610</p>
+</td>
+<td style="border-style: inset;">
+<p>5669</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>1742.84</p>
+</td>
+<td style="border-style: inset;">
+<p>1280.63</p>
+</td>
+<td style="border-style: inset;">
+<p>1607.97</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>52209.2</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>56895.7</p>
+</td>
+<td style="border-style: inset;">
+<p>2677.45</p>
+</td>
+<td style="border-style: inset;">
+<p>59573.1</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>jan99jac120.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>41374</p>
+</td>
+<td style="border-style: inset;">
+<p>260202</p>
+</td>
+<td style="border-style: inset;">
+<p>5648</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>280.002</p>
+</td>
+<td style="border-style: inset;">
+<p>1190.78</p>
+</td>
+<td style="border-style: inset;">
+<p>1291.43</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>72601.9</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>75390.5</p>
+</td>
+<td style="border-style: inset;">
+<p>2099.09</p>
+</td>
+<td style="border-style: inset;">
+<p>77489.6</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>juba40k.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>40337</p>
+</td>
+<td style="border-style: inset;">
+<p>144945</p>
+</td>
+<td style="border-style: inset;">
+<p>1943</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>1.75</p>
+</td>
+<td style="border-style: inset;">
+<p>163.693</p>
+</td>
+<td style="border-style: inset;">
+<p>383.828</p>
+</td>
+<td style="border-style: inset;">
+<p>419.385</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>8267.3</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>9270.01</p>
+</td>
+<td style="border-style: inset;">
+<p>2419.29</p>
+</td>
+<td style="border-style: inset;">
+<p>11689.3</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>laminar_duct3D.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>67173</p>
+</td>
+<td style="border-style: inset;">
+<p>3833077</p>
+</td>
+<td style="border-style: inset;">
+<p>2491</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>Not converged</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>lhr10c.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>10672</p>
+</td>
+<td style="border-style: inset;">
+<p>232633</p>
+</td>
+<td style="border-style: inset;">
+<p>426</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>258.927</p>
+</td>
+<td style="border-style: inset;">
+<p>27.557</p>
+</td>
+<td style="border-style: inset;">
+<p>31.205</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>144.406</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>474.188</p>
+</td>
+<td style="border-style: inset;">
+<p>75.756</p>
+</td>
+<td style="border-style: inset;">
+<p>549.944</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>mark3jac100.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>45769</p>
+</td>
+<td style="border-style: inset;">
+<p>285215</p>
+</td>
+<td style="border-style: inset;">
+<p>2155</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>514.157</p>
+</td>
+<td style="border-style: inset;">
+<p>585.574</p>
+</td>
+<td style="border-style: inset;">
+<p>763.974</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>19605</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>21492.4</p>
+</td>
+<td style="border-style: inset;">
+<p>1140.53</p>
+</td>
+<td style="border-style: inset;">
+<p>22633</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>mark3jac140.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>64089</p>
+</td>
+<td style="border-style: inset;">
+<p>399735</p>
+</td>
+<td style="border-style: inset;">
+<p>2123</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>777.56</p>
+</td>
+<td style="border-style: inset;">
+<p>696.668</p>
+</td>
+<td style="border-style: inset;">
+<p>962.677</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>28396.7</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>30860.2</p>
+</td>
+<td style="border-style: inset;">
+<p>1594.5</p>
+</td>
+<td style="border-style: inset;">
+<p>32454.7</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>minsurfo.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>40806</p>
+</td>
+<td style="border-style: inset;">
+<p>203622</p>
+</td>
+<td style="border-style: inset;">
+<p>202</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>28</p>
+</td>
+<td style="border-style: inset;">
+<p>3.25</p>
+</td>
+<td style="border-style: inset;">
+<p>110.283</p>
+</td>
+<td style="border-style: inset;">
+<p>44.654</p>
+</td>
+<td style="border-style: inset;">
+<p>13.627</p>
+</td>
+<td style="border-style: inset;">
+<p>17.3434</p>
+</td>
+<td style="border-style: inset;">
+<p>39.9794</p>
+</td>
+<td style="border-style: inset;">
+<p>13.9107</p>
+</td>
+<td style="border-style: inset;">
+<p>20.0398</p>
+</td>
+<td style="border-style: inset;">
+<p>299.466</p>
+</td>
+<td style="border-style: inset;">
+<p>98.65</p>
+</td>
+<td style="border-style: inset;">
+<p>398.116</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>ncvxbqp1.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>50000</p>
+</td>
+<td style="border-style: inset;">
+<p>349968</p>
+</td>
+<td style="border-style: inset;">
+<p>1748</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>316.057</p>
+</td>
+<td style="border-style: inset;">
+<p>429.558</p>
+</td>
+<td style="border-style: inset;">
+<p>513.536</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>8667.18</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>9999.78</p>
+</td>
+<td style="border-style: inset;">
+<p>894.428</p>
+</td>
+<td style="border-style: inset;">
+<p>10894.2</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>oilpan.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>73752</p>
+</td>
+<td style="border-style: inset;">
+<p>3597188</p>
+</td>
+<td style="border-style: inset;">
+<p>1952</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>1171.37</p>
+</td>
+<td style="border-style: inset;">
+<p>809.834</p>
+</td>
+<td style="border-style: inset;">
+<p>1099.61</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>14233.9</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>17459</p>
+</td>
+<td style="border-style: inset;">
+<p>1549.16</p>
+</td>
+<td style="border-style: inset;">
+<p>19008.1</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>olesnik0.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>88263</p>
+</td>
+<td style="border-style: inset;">
+<p>744216</p>
+</td>
+<td style="border-style: inset;">
+<p>1227</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>552.699</p>
+</td>
+<td style="border-style: inset;">
+<p>624.573</p>
+</td>
+<td style="border-style: inset;">
+<p>847.592</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>6649.38</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>8718.04</p>
+</td>
+<td style="border-style: inset;">
+<p>2383.53</p>
+</td>
+<td style="border-style: inset;">
+<p>11101.6</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>qa8fm.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>66127</p>
+</td>
+<td style="border-style: inset;">
+<p>1660579</p>
+</td>
+<td style="border-style: inset;">
+<p>1048</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>12</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>1081.37</p>
+</td>
+<td style="border-style: inset;">
+<p>367.781</p>
+</td>
+<td style="border-style: inset;">
+<p>175.092</p>
+</td>
+<td style="border-style: inset;">
+<p>183.044</p>
+</td>
+<td style="border-style: inset;">
+<p>1329.96</p>
+</td>
+<td style="border-style: inset;">
+<p>553.428</p>
+</td>
+<td style="border-style: inset;">
+<p>1132.21</p>
+</td>
+<td style="border-style: inset;">
+<p>4901.73</p>
+</td>
+<td style="border-style: inset;">
+<p>156.484</p>
+</td>
+<td style="border-style: inset;">
+<p>5058.21</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>rail_79841.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>79841</p>
+</td>
+<td style="border-style: inset;">
+<p>553921</p>
+</td>
+<td style="border-style: inset;">
+<p>407</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>8</p>
+</td>
+<td style="border-style: inset;">
+<p>5.75</p>
+</td>
+<td style="border-style: inset;">
+<p>485.467</p>
+</td>
+<td style="border-style: inset;">
+<p>126.904</p>
+</td>
+<td style="border-style: inset;">
+<p>86.513</p>
+</td>
+<td style="border-style: inset;">
+<p>18.1398</p>
+</td>
+<td style="border-style: inset;">
+<p>308.739</p>
+</td>
+<td style="border-style: inset;">
+<p>227.571</p>
+</td>
+<td style="border-style: inset;">
+<p>40.9392</p>
+</td>
+<td style="border-style: inset;">
+<p>1324.42</p>
+</td>
+<td style="border-style: inset;">
+<p>856.463</p>
+</td>
+<td style="border-style: inset;">
+<p>2180.88</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>rma10.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>46835</p>
+</td>
+<td style="border-style: inset;">
+<p>2374001</p>
+</td>
+<td style="border-style: inset;">
+<p>694</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>8</p>
+</td>
+<td style="border-style: inset;">
+<p>8.25</p>
+</td>
+<td style="border-style: inset;">
+<p>1598.57</p>
+</td>
+<td style="border-style: inset;">
+<p>293.655</p>
+</td>
+<td style="border-style: inset;">
+<p>163.936</p>
+</td>
+<td style="border-style: inset;">
+<p>55.1826</p>
+</td>
+<td style="border-style: inset;">
+<p>1661.23</p>
+</td>
+<td style="border-style: inset;">
+<p>697.558</p>
+</td>
+<td style="border-style: inset;">
+<p>193.563</p>
+</td>
+<td style="border-style: inset;">
+<p>4756.54</p>
+</td>
+<td style="border-style: inset;">
+<p>1029.15</p>
+</td>
+<td style="border-style: inset;">
+<p>5785.68</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>shallow_water1.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>81920</p>
+</td>
+<td style="border-style: inset;">
+<p>327680</p>
+</td>
+<td style="border-style: inset;">
+<p>322</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>16</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>314.659</p>
+</td>
+<td style="border-style: inset;">
+<p>67.479</p>
+</td>
+<td style="border-style: inset;">
+<p>23.87</p>
+</td>
+<td style="border-style: inset;">
+<p>14.6542</p>
+</td>
+<td style="border-style: inset;">
+<p>143.125</p>
+</td>
+<td style="border-style: inset;">
+<p>64.2335</p>
+</td>
+<td style="border-style: inset;">
+<p>42.4198</p>
+</td>
+<td style="border-style: inset;">
+<p>690.974</p>
+</td>
+<td style="border-style: inset;">
+<p>63.748</p>
+</td>
+<td style="border-style: inset;">
+<p>754.722</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>shallow_water2.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>81920</p>
+</td>
+<td style="border-style: inset;">
+<p>327680</p>
+</td>
+<td style="border-style: inset;">
+<p>322</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>16</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>313.699</p>
+</td>
+<td style="border-style: inset;">
+<p>71.406</p>
+</td>
+<td style="border-style: inset;">
+<p>27.399</p>
+</td>
+<td style="border-style: inset;">
+<p>18.74</p>
+</td>
+<td style="border-style: inset;">
+<p>140.462</p>
+</td>
+<td style="border-style: inset;">
+<p>64.4144</p>
+</td>
+<td style="border-style: inset;">
+<p>42.4511</p>
+</td>
+<td style="border-style: inset;">
+<p>700.085</p>
+</td>
+<td style="border-style: inset;">
+<p>102.066</p>
+</td>
+<td style="border-style: inset;">
+<p>802.151</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>thermal1.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>82654</p>
+</td>
+<td style="border-style: inset;">
+<p>574458</p>
+</td>
+<td style="border-style: inset;">
+<p>268</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>12</p>
+</td>
+<td style="border-style: inset;">
+<p>6.25</p>
+</td>
+<td style="border-style: inset;">
+<p>514.647</p>
+</td>
+<td style="border-style: inset;">
+<p>114.557</p>
+</td>
+<td style="border-style: inset;">
+<p>54.813</p>
+</td>
+<td style="border-style: inset;">
+<p>9.98355</p>
+</td>
+<td style="border-style: inset;">
+<p>210.633</p>
+</td>
+<td style="border-style: inset;">
+<p>174.108</p>
+</td>
+<td style="border-style: inset;">
+<p>18.8895</p>
+</td>
+<td style="border-style: inset;">
+<p>1202.36</p>
+</td>
+<td style="border-style: inset;">
+<p>644.793</p>
+</td>
+<td style="border-style: inset;">
+<p>1847.15</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>vanbody.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>47072</p>
+</td>
+<td style="border-style: inset;">
+<p>2336898</p>
+</td>
+<td style="border-style: inset;">
+<p>2007</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>1092.81</p>
+</td>
+<td style="border-style: inset;">
+<p>473.9</p>
+</td>
+<td style="border-style: inset;">
+<p>672.519</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>10144.9</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>12477.7</p>
+</td>
+<td style="border-style: inset;">
+<p>997.185</p>
+</td>
+<td style="border-style: inset;">
+<p>13474.9</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>venkat25.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>62424</p>
+</td>
+<td style="border-style: inset;">
+<p>1717792</p>
+</td>
+<td style="border-style: inset;">
+<p>1569</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>498.976</p>
+</td>
+<td style="border-style: inset;">
+<p>483.585</p>
+</td>
+<td style="border-style: inset;">
+<p>699.543</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>8052.97</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>9792.18</p>
+</td>
+<td style="border-style: inset;">
+<p>1276.57</p>
+</td>
+<td style="border-style: inset;">
+<p>11068.8</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>vibrobox.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>12328</p>
+</td>
+<td style="border-style: inset;">
+<p>342828</p>
+</td>
+<td style="border-style: inset;">
+<p>4675</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>204.875</p>
+</td>
+<td style="border-style: inset;">
+<p>329.684</p>
+</td>
+<td style="border-style: inset;">
+<p>450.068</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>16412.9</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>17418.2</p>
+</td>
+<td style="border-style: inset;">
+<p>480.585</p>
+</td>
+<td style="border-style: inset;">
+<p>17898.8</p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p>xenon1.mtx</p>
+</td>
+<td style="border-style: inset;">
+<p>48600</p>
+</td>
+<td style="border-style: inset;">
+<p>1181120</p>
+</td>
+<td style="border-style: inset;">
+<p>2024</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>N/A</p>
+</td>
+<td style="border-style: inset;">
+<p>1</p>
+</td>
+<td style="border-style: inset;">
+<p>0.25</p>
+</td>
+<td style="border-style: inset;">
+<p>340.252</p>
+</td>
+<td style="border-style: inset;">
+<p>508.235</p>
+</td>
+<td style="border-style: inset;">
+<p>488.054</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>11571.2</p>
+</td>
+<td style="border-style: inset;">
+<p>0</p>
+</td>
+<td style="border-style: inset;">
+<p>13031.6</p>
+</td>
+<td style="border-style: inset;">
+<p>1033.08</p>
+</td>
+<td style="border-style: inset;">
+<p>14064.6</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</body></html>
+
