@@ -26,3 +26,5 @@ title: Nightly
 
 [10-21-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_21_results.html)
 
+[10-22-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_22_results.html)
+
