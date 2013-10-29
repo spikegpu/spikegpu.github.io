@@ -44,3 +44,5 @@ title: Nightly
 
 [10-28-2013 Results with feature out_of_memory] (http://spikegpu.sbel.org/nightly_build/2013_10_28_results_out_of_memory.html)
 
+[10-29-2013 Results with feature mixed_precision] (http://spikegpu.sbel.org/nightly_build/2013_10_29_results_mixed_precision.html)
+
