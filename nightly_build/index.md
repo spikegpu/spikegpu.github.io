@@ -54,3 +54,5 @@ title: Nightly
 
 [10-31-2013 Results with feature mixed_precision] (http://spikegpu.sbel.org/nightly_build/2013_10_31_results_mixed_precision.html)
 
+[11-1-2013 Results with feature mixed_precision] (http://spikegpu.sbel.org/nightly_build/2013_11_1_results_mixed_precision.html)
+
