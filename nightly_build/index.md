@@ -56,3 +56,5 @@ title: Nightly
 
 [11-1-2013 Results with feature mixed_precision] (http://spikegpu.sbel.org/nightly_build/2013_11_1_results_mixed_precision.html)
 
+[11-2-2013 Results with feature dropOff50Left] (http://spikegpu.sbel.org/nightly_build/2013_11_2_results_dropOff50Left.html)
+
