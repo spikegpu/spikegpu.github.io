@@ -66,3 +66,5 @@ title: Nightly
 
 [11-5-2013 Results with feature dropOffAhmed] (http://spikegpu.sbel.org/nightly_build/2013_11_5_results_dropOffAhmed.html)
 
+[11-6-2013 Results with feature exceptionHandling] (http://spikegpu.sbel.org/nightly_build/2013_11_6_results_exceptionHandling.html)
+
