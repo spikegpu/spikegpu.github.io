@@ -6,6 +6,8 @@ title: Nightly
 ### Nightly
 
 
+[11-7-2013 Results with feature exceptionHandling] (http://spikegpu.sbel.org/nightly_build/2013_11_7_results_exceptionHandling.html)
+
 [11-6-2013 Results with feature exceptionHandling] (http://spikegpu.sbel.org/nightly_build/2013_11_6_results_exceptionHandling.html)
 
 [11-5-2013 Results with feature dropOffAhmed] (http://spikegpu.sbel.org/nightly_build/2013_11_5_results_dropOffAhmed.html)
@@ -65,5 +67,4 @@ title: Nightly
 [10-16-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_16_results.html)
 
 [10-15-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_15_results.html)
-[11-7-2013 Results with feature exceptionHandling] (http://spikegpu.sbel.org/nightly_build/2013_11_7_results_exceptionHandling.html)
 
