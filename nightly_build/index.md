@@ -70,3 +70,5 @@ title: Nightly
 
 [10-15-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_15_results.html)
 
+[11-9-2013 Results with feature exceptionHandling] (http://spikegpu.sbel.org/nightly_build/2013_11_9_results_exceptionHandling.html)
+
