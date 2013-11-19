@@ -1,0 +1,25 @@
+var structspike_1_1_stats =
+[
+    [ "Stats", "structspike_1_1_stats.html#a3f0b79794a8939ca6beadffe954e10cb", null ],
+    [ "actualDropOff", "structspike_1_1_stats.html#acd24a50065d01ccb1a249348db367fc3", null ],
+    [ "bandwidth", "structspike_1_1_stats.html#a1b0781957f5da077d3473a409ec1fb4b", null ],
+    [ "bandwidthMC64", "structspike_1_1_stats.html#a19962078e8000899977930eb174577a2", null ],
+    [ "bandwidthReorder", "structspike_1_1_stats.html#ae100d607a55e87c8eeb43e9595e2f01c", null ],
+    [ "numIterations", "structspike_1_1_stats.html#a596679edeccf2eebe0f91b7494e371c1", null ],
+    [ "numPartitions", "structspike_1_1_stats.html#af7388a57f49da23225aba1d774e86b8a", null ],
+    [ "relResidualNorm", "structspike_1_1_stats.html#af8d93e955aaf8d157fb9c8987f3bd9a0", null ],
+    [ "residualNorm", "structspike_1_1_stats.html#a71627ad86801335de7542964537eb616", null ],
+    [ "time_assembly", "structspike_1_1_stats.html#ab8292097176c14a489d1de8f578f3407", null ],
+    [ "time_bandLU", "structspike_1_1_stats.html#a75396278571058a5069cd9b8b9fb1efb", null ],
+    [ "time_bandUL", "structspike_1_1_stats.html#ac6cfa7956b6cb1527508194e49836779", null ],
+    [ "time_cpu_assemble", "structspike_1_1_stats.html#a0c5f7a811d3f018a56abf27f2fdd133d", null ],
+    [ "time_fullLU", "structspike_1_1_stats.html#a43c845c85c8cfc600c9ef5c21b15625f", null ],
+    [ "time_offDiags", "structspike_1_1_stats.html#a39d19fe1e0d4b886006e6a5cf31078dd", null ],
+    [ "time_reorder", "structspike_1_1_stats.html#a34347d56e6c69301750e008f6372d1f2", null ],
+    [ "time_shuffle", "structspike_1_1_stats.html#a01177bc9b9fea59870ae454451ad090f", null ],
+    [ "time_toBanded", "structspike_1_1_stats.html#aa10caf1a12f1543dcf16f935e909bb6e", null ],
+    [ "time_transfer", "structspike_1_1_stats.html#a6ec36679b780f95c2a40175accd2421f", null ],
+    [ "timeSetup", "structspike_1_1_stats.html#a43c43fcfc61cc90072d34389c2f9df50", null ],
+    [ "timeSolve", "structspike_1_1_stats.html#a00f324bb31d6477cb4020a5759c7087b", null ],
+    [ "timeUpdate", "structspike_1_1_stats.html#a972e503a8c51fdef890b881880934818", null ]
+];

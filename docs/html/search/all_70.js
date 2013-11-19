@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['performmc64',['performMC64',['../structspike_1_1_options.html#a99ff438574bd5c2a9cc973f04b463acb',1,'spike::Options']]],
+  ['performreorder',['performReorder',['../structspike_1_1_options.html#affa50321f48d5a8490d774505e55b192',1,'spike::Options']]],
+  ['permutationiterator',['PermutationIterator',['../classspike_1_1strided__range.html#a46bc9d005a7633fb3b54dbfebbd2b2c6',1,'spike::strided_range']]],
+  ['permute',['permute',['../namespacespike_1_1device.html#a0ab4d55aefcd8c365df5f492fa615ef0',1,'spike::device']]],
+  ['prebck_5ffull_5fdivide',['preBck_full_divide',['../namespacespike_1_1device_1_1var.html#a3ac81fc94ef22186043feae88abdd393',1,'spike::device::var']]],
+  ['prebck_5ffull_5fdivide_5fnarrow',['preBck_full_divide_narrow',['../namespacespike_1_1device_1_1var.html#a1ade7d7b3d3823176d7a76a6a4c07f1f',1,'spike::device::var']]],
+  ['prebck_5fleftspike_5fdivide_5fper_5fpartition',['preBck_leftSpike_divide_per_partition',['../namespacespike_1_1device_1_1var.html#a68d9a802625af4e3212f2c61db5a2323',1,'spike::device::var']]],
+  ['prebck_5foffdiag_5fdivide',['preBck_offDiag_divide',['../namespacespike_1_1device_1_1var.html#a6b53acbc5f0eac04f0ea8ef1ef3cfc4d',1,'spike::device::var']]],
+  ['prebck_5foffdiag_5fdivide_5fper_5fpartition',['preBck_offDiag_divide_per_partition',['../namespacespike_1_1device_1_1var.html#a6207add1436c74fd9a0f8ab6fcefd776',1,'spike::device::var']]],
+  ['prebck_5frightspike_5fdivide_5fper_5fpartition',['preBck_rightSpike_divide_per_partition',['../namespacespike_1_1device_1_1var.html#a520ef2ac6449c9c8130139306703eb1e',1,'spike::device::var']]],
+  ['prebck_5fsol_5fdivide',['preBck_sol_divide',['../namespacespike_1_1device.html#a3cc2cdbb40fa4e335e217d43d8b7ce4d',1,'spike::device::preBck_sol_divide()'],['../namespacespike_1_1device_1_1var.html#a2177b76468de0bf399af8a5cca65e4ca',1,'spike::device::var::preBck_sol_divide()']]],
+  ['precmatrixcoo',['PrecMatrixCoo',['../classspike_1_1_precond.html#ac3d6beb0590222b1e443003b69d10b2e',1,'spike::Precond']]],
+  ['precmatrixcooh',['PrecMatrixCooH',['../classspike_1_1_precond.html#a1e36e6df726844689e047b2c048d9ed5',1,'spike::Precond']]],
+  ['precond',['Precond',['../classspike_1_1_precond.html#a192747d4c28880833b506ecad9e6b2e6',1,'spike::Precond::Precond()'],['../classspike_1_1_precond.html#ac604f9e8ab965b18ff48d727b9d3ddf1',1,'spike::Precond::Precond(int numPart, bool reorder, bool doMC64, bool scale, double dropOff_frac, int maxBandwidth, FactorizationMethod factMethod, PreconditionerType precondType, bool safeFactorization, bool variableBandwidth, bool trackReordering)'],['../classspike_1_1_precond.html#ab42f890876f2f48fe0c47200b06070ce',1,'spike::Precond::Precond(const Precond &amp;prec)']]],
+  ['precond',['Precond',['../classspike_1_1_precond.html',1,'spike']]],
+  ['precond_2eh',['precond.h',['../precond_8h.html',1,'']]],
+  ['preconditionertype',['PreconditionerType',['../namespacespike.html#a5a62ff6c9531f6178b1d8a56d5e57067',1,'spike']]],
+  ['precondsolvewrapper',['precondSolveWrapper',['../namespacespike.html#a77a2436616beba5e8ca2fd98d086e3b9',1,'spike']]],
+  ['precondtype',['precondType',['../structspike_1_1_options.html#aca7863877652b8e630bae0e10d45e9ac',1,'spike::Options']]],
+  ['precvaluetype',['PrecValueType',['../classspike_1_1_precond.html#a7a6d09cd290040295964771d07880e95',1,'spike::Precond']]],
+  ['precvectorh',['PrecVectorH',['../classspike_1_1_precond.html#aec7213d225c5fc3c060228b4d0efc418',1,'spike::Precond']]],
+  ['precvectoriterator',['PrecVectorIterator',['../classspike_1_1_precond.html#a6b8433ff692107d2bb38e858e68976e4',1,'spike::Precond']]]
+];

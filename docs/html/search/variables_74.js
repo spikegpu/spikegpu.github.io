@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['time_5fassembly',['time_assembly',['../structspike_1_1_stats.html#ab8292097176c14a489d1de8f578f3407',1,'spike::Stats']]],
+  ['time_5fbandlu',['time_bandLU',['../structspike_1_1_stats.html#a75396278571058a5069cd9b8b9fb1efb',1,'spike::Stats']]],
+  ['time_5fbandul',['time_bandUL',['../structspike_1_1_stats.html#ac6cfa7956b6cb1527508194e49836779',1,'spike::Stats']]],
+  ['time_5fcpu_5fassemble',['time_cpu_assemble',['../structspike_1_1_stats.html#a0c5f7a811d3f018a56abf27f2fdd133d',1,'spike::Stats']]],
+  ['time_5ffulllu',['time_fullLU',['../structspike_1_1_stats.html#a43c845c85c8cfc600c9ef5c21b15625f',1,'spike::Stats']]],
+  ['time_5foffdiags',['time_offDiags',['../structspike_1_1_stats.html#a39d19fe1e0d4b886006e6a5cf31078dd',1,'spike::Stats']]],
+  ['time_5freorder',['time_reorder',['../structspike_1_1_stats.html#a34347d56e6c69301750e008f6372d1f2',1,'spike::Stats']]],
+  ['time_5fshuffle',['time_shuffle',['../structspike_1_1_stats.html#a01177bc9b9fea59870ae454451ad090f',1,'spike::Stats']]],
+  ['time_5ftobanded',['time_toBanded',['../structspike_1_1_stats.html#aa10caf1a12f1543dcf16f935e909bb6e',1,'spike::Stats']]],
+  ['time_5ftransfer',['time_transfer',['../structspike_1_1_stats.html#a6ec36679b780f95c2a40175accd2421f',1,'spike::Stats']]],
+  ['timeend',['timeEnd',['../classspike_1_1_g_p_u_timer.html#a988b90380e6b34a64d46d06203faa274',1,'spike::GPUTimer::timeEnd()'],['../classspike_1_1_c_p_u_timer.html#ad9fe4f65c71554b87cdbb5c42c07b3fa',1,'spike::CPUTimer::timeEnd()']]],
+  ['timesetup',['timeSetup',['../structspike_1_1_stats.html#a43c43fcfc61cc90072d34389c2f9df50',1,'spike::Stats']]],
+  ['timesolve',['timeSolve',['../structspike_1_1_stats.html#a00f324bb31d6477cb4020a5759c7087b',1,'spike::Stats']]],
+  ['timestart',['timeStart',['../classspike_1_1_g_p_u_timer.html#aff723dd659b92022e834c21dd19fa536',1,'spike::GPUTimer::timeStart()'],['../classspike_1_1_c_p_u_timer.html#af82ca589a014434fd901d8e3c1c6fd9e',1,'spike::CPUTimer::timeStart()']]],
+  ['timeupdate',['timeUpdate',['../structspike_1_1_stats.html#a972e503a8c51fdef890b881880934818',1,'spike::Stats']]],
+  ['tolerance',['tolerance',['../structspike_1_1_options.html#ab21c430dbac05193939b349b298c4f15',1,'spike::Options']]],
+  ['trackreordering',['trackReordering',['../structspike_1_1_options.html#af325fc9f9352c99dffb082acf440c39d',1,'spike::Options']]]
+];
