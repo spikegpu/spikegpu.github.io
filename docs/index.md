@@ -2,7 +2,10 @@
 layout: default
 title: Documentation
 ---
-### Documentation
+
+**Spike API** [doxygen](spikegpu.github.io/docs/index.html)
+
+**Building examples**
 
 The [SpikeLibrary](https://github.com/spikegpu/SpikeLibrary) uses CMake to build the example executables found under `examples`. You must have a recent version of [CMake](http://www.cmake.org/) and [Nvidia's CUDA](http://www.nvidia.com/cuda) installed in order to build.
 
