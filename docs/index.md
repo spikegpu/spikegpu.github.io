@@ -3,7 +3,7 @@ layout: default
 title: Documentation
 ---
 
-**Spike API** [doxygen](spikegpu.github.io/docs/index.html)
+**Spike API** [doxygen](http://spikegpu.sbel.org/docs/html/index.html)
 
 **Building examples**
 
