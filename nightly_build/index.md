@@ -6,11 +6,15 @@ title: Nightly
 ### Nightly
 
 
+[11-21-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_11_21_results_1-0-0-release.html)
+
+[11-20-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_11_20_results_1-0-0-release.html)
+
 [11-19-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_11_19_results_1-0-0-release.html)
 
-[11-19-2013 Results with feature 1-0-0-pre-release] (http://spikegpu.sbel.org/nightly_build/2013_11_19_results_1-0-0-pre-release.html)
+[11-19-2013 Results 1-0-0-pre-release] (http://spikegpu.sbel.org/nightly_build/2013_11_19_results_1-0-0-pre-release.html)
 
-[11-16-2013 Results with feature 1-0-0-pre-release] (http://spikegpu.sbel.org/nightly_build/2013_11_16_results_1-0-0-pre-release.html)
+[11-16-2013 Results 1-0-0-pre-release] (http://spikegpu.sbel.org/nightly_build/2013_11_16_results_1-0-0-pre-release.html)
 
 [11-9-2013 Results with feature exceptionHandling] (http://spikegpu.sbel.org/nightly_build/2013_11_9_results_exceptionHandling.html)
 
@@ -77,8 +81,4 @@ title: Nightly
 [10-16-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_16_results.html)
 
 [10-15-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_15_results.html)
-
-[11-20-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_11_20_results_1-0-0-release.html)
-
-[11-21-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_11_21_results_1-0-0-release.html)
 
