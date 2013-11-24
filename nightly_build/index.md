@@ -88,3 +88,5 @@ title: Nightly
 
 [11-23-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_11_23_results_1-0-0-release.html)
 
+[11-23-2013 Results with feature merged-lu-sub-div] (http://spikegpu.sbel.org/nightly_build/2013_11_23_results_merged-lu-sub-div.html)
+
