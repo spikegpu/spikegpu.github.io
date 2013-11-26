@@ -94,3 +94,5 @@ title: Nightly
 
 [11-25-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_11_25_results_1-0-0-release.html)
 
+[11-26-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_11_26_results_1-0-0-release.html)
+
