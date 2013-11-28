@@ -100,3 +100,5 @@ title: Nightly
 
 [11-27-2013 Results bigdan] (http://spikegpu.sbel.org/nightly_build/2013_11_27_results_bigdan.html)
 
+[11-28-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_11_28_results_1-0-0-release.html)
+
