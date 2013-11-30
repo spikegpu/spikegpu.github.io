@@ -104,3 +104,5 @@ title: Nightly
 
 [11-29-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_11_29_results_1-0-0-release.html)
 
+[11-30-2013 Results blockedLU] (http://spikegpu.sbel.org/nightly_build/2013_11_30_results_blockedLU.html)
+
