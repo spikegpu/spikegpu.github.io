@@ -6,6 +6,8 @@ title: Nightly
 ### Nightly
 
 
+[12-2-2013 Results SPD] (http://spikegpu.sbel.org/nightly_build/2013_12_2_results_SPD.html)
+
 [11-30-2013 Results blockedLU] (http://spikegpu.sbel.org/nightly_build/2013_11_30_results_blockedLU.html)
 
 [11-29-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_11_29_results_1-0-0-release.html)
@@ -105,6 +107,4 @@ title: Nightly
 [10-16-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_16_results.html)
 
 [10-15-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_15_results.html)
-
-[12-2-2013 Results SPD] (http://spikegpu.sbel.org/nightly_build/2013_12_2_results_SPD.html)
 
