@@ -110,3 +110,5 @@ title: Nightly
 
 [10-15-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_15_results.html)
 
+[12-6-2013 Results SPD2] (http://spikegpu.sbel.org/nightly_build/2013_12_6_results_SPD2.html)
+
