@@ -120,3 +120,5 @@ title: Nightly
 
 [10-15-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_15_results.html)
 
+[12-13-2013 Results ompNumThreadsSweep] (http://spikegpu.sbel.org/nightly_build/2013_12_13_results_ompNumThreadsSweep.html)
+
