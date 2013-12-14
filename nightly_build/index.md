@@ -122,3 +122,5 @@ title: Nightly
 
 [12-13-2013 Results ompNumThreadsSweep] (http://spikegpu.sbel.org/nightly_build/2013_12_13_results_ompNumThreadsSweep.html)
 
+[12-14-2013 Results spdSaveMem] (http://spikegpu.sbel.org/nightly_build/2013_12_14_results_spdSaveMem.html)
+
