@@ -6,6 +6,10 @@ title: Nightly
 ### Nightly
 
 
+[12-20-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_12_20_results_1-0-0-release.html)
+
+[12-19-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_12_19_results_1-0-0-release.html)
+
 [12-18-2013 Results spdSaveMem] (http://spikegpu.sbel.org/nightly_build/2013_12_18_results_spdSaveMem.html)
 
 [12-14-2013 Results spdSaveMem] (http://spikegpu.sbel.org/nightly_build/2013_12_14_results_spdSaveMem.html)
@@ -123,8 +127,4 @@ title: Nightly
 [10-16-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_16_results.html)
 
 [10-15-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_10_15_results.html)
-
-[12-19-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_12_19_results_1-0-0-release.html)
-
-[12-20-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_12_20_results_1-0-0-release.html)
 
