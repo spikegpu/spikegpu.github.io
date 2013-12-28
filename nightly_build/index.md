@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[12-28-2013 Double Results] (http://spikegpu.sbel.org/nightly_build/2013_12_28_double_results_1-0-0-release.html)
+
+
 [12-28-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_12_28_results_1-0-0-release.html)
 
 
