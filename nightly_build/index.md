@@ -8,30 +8,19 @@ title: Nightly
 
 [12-30-2013 Double Results] (http://spikegpu.sbel.org/nightly_build/2013_12_30_double_results_1-0-0-release.html)
 
-
-[12-30-2013 Double Results] (http://spikegpu.sbel.org/nightly_build/2013_12_30_double_results_1-0-0-release.html)
-
-
 [12-30-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_12_30_results_1-0-0-release.html)
-
 
 [12-29-2013 Double Results] (http://spikegpu.sbel.org/nightly_build/2013_12_29_double_results_1-0-0-release.html)
 
-
 [12-29-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_12_29_results_1-0-0-release.html)
-
 
 [12-28-2013 Double Results] (http://spikegpu.sbel.org/nightly_build/2013_12_28_double_results_1-0-0-release.html)
 
-
 [12-28-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_12_28_results_1-0-0-release.html)
-
 
 [12-27-2013 Double Results] (http://spikegpu.sbel.org/nightly_build/2013_12_27_double_results_1-0-0-release.html)
 
-
 [12-27-2013 Results] (http://spikegpu.sbel.org/nightly_build/2013_12_27_results_1-0-0-release.html)
-
 
 [12-26-2013 Double Results] (http://spikegpu.sbel.org/nightly_build/2013_12_26_double_results_1-0-0-release.html)
 
