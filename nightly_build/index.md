@@ -8,21 +8,11 @@ title: Nightly
 
 [1-2-2014 Double Results] (http://spikegpu.sbel.org/nightly_build/2014_1_2_double_results_1-0-0-release.html)
 
-
 [1-2-2014 Results] (http://spikegpu.sbel.org/nightly_build/2014_1_2_results_1-0-0-release.html)
 
-
 [1-1-2014 Double Results] (http://spikegpu.sbel.org/nightly_build/2014_1_1_double_results_1-0-0-release.html)
 
-
 [1-1-2014 Results] (http://spikegpu.sbel.org/nightly_build/2014_1_1_results_1-0-0-release.html)
-
-
-[1-1-2014 Double Results] (http://spikegpu.sbel.org/nightly_build/2014_1_1_double_results_1-0-0-release.html)
-
-
-[1-1-2014 Results] (http://spikegpu.sbel.org/nightly_build/2014_1_1_results_1-0-0-release.html)
-
 
 [12-31-2013 Double Results] (http://spikegpu.sbel.org/nightly_build/2013_12_31_double_results_1-0-0-release.html)
 
