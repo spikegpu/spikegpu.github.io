@@ -1,0 +1,418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html><head><title></title>
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<style type="text/css"><!--
+
+body {
+
+margin: 5px 5px 5px 5px;
+
+background-color: #ffffff;
+
+}
+
+/* ========== Text Styles ========== */
+
+hr { color: #000000}
+
+body, table /* Normal text */
+
+{
+
+font-size: 10pt;
+
+font-family: 'Courier New';
+
+font-style: normal;
+
+font-weight: normal;
+
+color: #000000;
+
+text-decoration: none;
+
+}
+
+span.rvts1 /* Heading */
+
+{
+
+font-family: 'Arial';
+
+font-weight: bold;
+
+color: #0000ff;
+
+}
+
+span.rvts2 /* Subheading */
+
+{
+
+font-family: 'Arial';
+
+font-weight: bold;
+
+color: #000080;
+
+}
+
+span.rvts3 /* Keywords */
+
+{
+
+font-family: 'Arial';
+
+font-style: italic;
+
+color: #800000;
+
+}
+
+a.rvts4, span.rvts4 /* Jump 1 */
+
+{
+
+color: #008000;
+
+text-decoration: underline;
+
+}
+
+a.rvts5, span.rvts5 /* Jump 2 */
+
+{
+
+font-family: 'Arial';
+
+color: #008000;
+
+text-decoration: underline;
+
+}
+
+/* ========== Para Styles ========== */
+
+p,ul,ol /* Paragraph Style */
+
+{
+
+text-align: left;
+
+text-indent: 0px;
+
+padding: 0px 0px 0px 0px;
+
+margin: 0px 0px 0px 0px;
+
+}
+
+.rvps1 /* Centered */
+
+{
+
+text-align: center;
+
+}
+
+--></style>
+
+</head>
+
+<body>
+
+
+
+<p><br></p>
+
+<h1> 1-3-2014 Double Results </h1>
+
+<p><br></p>
+
+<p> <br>
+
+&bull; Name: the name of the matrix (test) <br>
+
+&bull; N: the dimension of the matrix (number of rows and columns) <br>
+
+&bull; NNZ: number of non-zeros <br>
+
+&bull; SPD: whether the matrix is specified by the user to be symmetric positive definite (values: 0 or 1) <br>
+
+&bull; MC64: indicate whether MC64 reordering is performed. Values: 0 or 1. <br>
+
+&bull; K-MC64: the half-bandwidth after MC64 reordering method (without any drop-off). If MC64 is specified not to be executed, then this reports the original half-bandwidth  <br>
+
+&bull; KnoDrp: the half-bandwidth after MC64 and RCM reordering but before drop-off <br>
+
+&bull; K: the half-bandwidth after reordering and drop-off <br>
+
+&bull; nuKf: non-uniform K factor. Indicates whether the K changes a lot from row to row. Values are between 0 and 1, with 0 indicating a perfectly uniform bandwidth over the entire matrix. See NOTES below <br>
+
+&bull; Solves: indicates whether we managed to solve the problem or not. OK means solved fine, otherwise a reason is provided for failure <br>
+
+&bull; Bstng: indicates whether we enable diagonal boosting when doing factorization. Values: 0 or 1 <br>
+
+&bull; SolAcc: infinity norm of the array storing the relative errors  <br>
+
+&bull; T-MC64: time to run MC64 reordering for the matrix on the CPU <br>
+
+&bull; T-RCM: time to run RCM reordering for the matrix on the CPU <br>
+
+&bull; T-Drop: time to drop off off-diagonal elements to decrease bandwidth. Done on the CPU. <br>
+
+&bull; T-Asmbl: after reordering and drop-off, copy the sparse matrix to banded matrix stored in CPU memory <br>
+
+&bull; T-Dtransf: data transfer from CPU to GPU <br>
+
+&bull; NPrtns: the number of partitions used to solve the problem <br>
+
+&bull; T-BC: time required to get off-diagonal right hand sides (Bs and Cs) from the banded matrix - done on the GPU <br>
+
+&bull; T-LU: LU time <br>
+
+&bull; GFlps-LU: LU GFLOPs <br>
+
+&bull; T-SPK: time to solve for the spikes Vs and Ws - done on the GPU <br>
+
+&bull; T-LUrdcd: time required to factorize the reduced matrices - done on the GPU <br>
+
+&bull; T-PreP: the sum of all preprocessing times, see NOTES <br>
+
+&bull; Kry-M: the method used in Krylov solving stage (can be BiCGStab2 (0), BiCGStab (1), or CG(2)) <br>
+
+&bull; nItrs: the number of Krylov-solve iterations to solve the problem <br>
+
+&bull; T-Kry: time spent in the Krylov solver (on the GPU) <br>
+
+&bull; Total: total time to solve the problem, sum of PreProc + T-Kry  <br>
+
+&bull; Pardiso: the time for the commercial tool "Pardiso" to solve the problem <br>
+
+&bull; SlwD: the slowdown ratio of our solver compared to Pardiso (a value less than one means that we are faster than Pardiso. The value is shown in green if we run faster and shown in red if we run more than 5 times slower.) <br>
+
+&bull; Fastest: the time when SPIKE runs fastest historically <br>
+
+&bull; SpdUp: the speedup of this run compared to the historical fastest run (the value is shown in green if the speedup is more than 5% and shown in red if the slowdown is more than 5%) <br>
+
+</p>
+
+<p> <br>
+
+NOTES: <br>
+
+1)	nuKf = 1/(2KN)*[sum over i from 1 to N of (2K - K_{iLeft} - K_{iRight})], where K_{iLeft} is the row half-bandwidth to the left of the diagonal while K_{iRight} is the row half-bandwidth to the right of the diagonal. <br>
+
+2)	All times reported are in miliseconds (1E-3 second) <br>
+
+</p>
+
+<p> <br> </p>
+
+<div><table width="100%" border=1 cellpadding=1 cellspacing=2 style="background-color: #ffffff;">
+
+<tr valign=top>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Name</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>N</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>NNZ</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>SPD</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>MC64</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>K-MC64</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>K-noDrop</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>K</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>nuKf</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Solves</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Bstng</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>SolAcc</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-MC64</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-RCM</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-Drop</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-Asmbl</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-Dtransf</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>NPrtns</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-BC</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-LU</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>GFlps-LU</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-SPK</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-LUrdcd</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-PreP</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Kry-M</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>nItrs</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-Kry</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-Total</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Pardiso</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>SlwD</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Fastest</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>SpdUp</span></p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</body></html>
+
