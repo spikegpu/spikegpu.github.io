@@ -164,9 +164,9 @@ text-align: center;
 
 &bull; T-Drop: time to drop off off-diagonal elements to decrease bandwidth. Done on the CPU. <br>
 
-&bull; T-Asmbl: after reordering and drop-off, copy the sparse matrix to banded matrix stored in CPU memory <br>
-
 &bull; T-Dtransf: data transfer from CPU to GPU <br>
+
+&bull; T-Asmbl: after reordering and drop-off, copy the sparse matrix to banded matrix stored in CPU memory <br>
 
 &bull; NPrtns: the number of partitions used to solve the problem <br>
 
@@ -308,13 +308,13 @@ NOTES: <br>
 
 <td style="border-style: inset;">
 
-<p><span class=rvts1>T-Asmbl</span></p>
+<p><span class=rvts1>T-Dtransf</span></p>
 
 </td>
 
 <td style="border-style: inset;">
 
-<p><span class=rvts1>T-Dtransf</span></p>
+<p><span class=rvts1>T-Asmbl</span></p>
 
 </td>
 
@@ -451,16 +451,16 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 383.928 </p>
+<p> 386.741 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 17.323 </p>
+<p> 34.567 </p>
 </td>
 <td style="border-style: inset;">
-<p> 35.239 </p>
+<p> 17.293 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -469,19 +469,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 22972.2 </p>
+<p> 22963.1 </p>
 </td>
 <td style="border-style: inset;">
-<p> 53.2461 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 53.2673 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 23488 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 23479.9 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -490,22 +490,22 @@ NOTES: <br>
 <p> 0.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2667.44 </p>
+<p> 2666.38 </p>
 </td>
 <td style="border-style: inset;">
-<p> 26155.5 </p>
+<p> 26146.3 </p>
 </td>
 <td style="border-style: inset;">
 <p> 5341.58 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4.89658 </p>
+<p> 4.89486 </p>
 </td>
 <td style="border-style: inset;">
 <p> 26149.4 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.999768 </p>
+<p> 1.00012 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -546,19 +546,19 @@ NOTES: <br>
 <p> 0.0349069 </p>
 </td>
 <td style="border-style: inset;">
-<p> 148.696 </p>
+<p> 147.639 </p>
 </td>
 <td style="border-style: inset;">
-<p> 192.471 </p>
+<p> 176.746 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8.295 </p>
+<p> 21.569 </p>
 </td>
 <td style="border-style: inset;">
-<p> 26.942 </p>
+<p> 6.719 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -567,19 +567,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3161.25 </p>
+<p> 3161 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20.4144 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 20.416 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3578.32 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3548.83 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -588,22 +588,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1109.38 </p>
+<p> 1108.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4687.7 </p>
+<p> 4657.32 </p>
 </td>
 <td style="border-style: inset;">
 <p> 419.407 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">11.177 </FONT> </p>
+<p> <FONT COLOR="Red">11.1045 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 4692.89 </p>
+<p> 4687.7 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00111 </p>
+<p> 1.00652 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -644,40 +644,40 @@ NOTES: <br>
 <p> 5.88718e-07 </p>
 </td>
 <td style="border-style: inset;">
-<p> 18.335 </p>
+<p> 18.074 </p>
 </td>
 <td style="border-style: inset;">
-<p> 41.05 </p>
+<p> 41.901 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20.029 </p>
+<p> 2.226 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.302 </p>
+<p> 20.243 </p>
 </td>
 <td style="border-style: inset;">
 <p> 16 </p>
 </td>
 <td style="border-style: inset;">
-<p> 11.7584 </p>
+<p> 11.6001 </p>
 </td>
 <td style="border-style: inset;">
-<p> 30.2354 </p>
+<p> 30.1922 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.896273 </p>
+<p> 0.897555 </p>
 </td>
 <td style="border-style: inset;">
-<p> 91.7381 </p>
+<p> 91.6166 </p>
 </td>
 <td style="border-style: inset;">
-<p> 15.0467 </p>
+<p> 15.0243 </p>
 </td>
 <td style="border-style: inset;">
-<p> 252.142 </p>
+<p> 252.514 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -686,22 +686,22 @@ NOTES: <br>
 <p> 7.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 254.205 </p>
+<p> 252.593 </p>
 </td>
 <td style="border-style: inset;">
-<p> 506.347 </p>
+<p> 505.107 </p>
 </td>
 <td style="border-style: inset;">
 <p> 227.231 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.22834 </p>
+<p> 2.22288 </p>
 </td>
 <td style="border-style: inset;">
 <p> 431.408 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.852001 </FONT> </p>
+<p> <FONT COLOR="Red">0.854092 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -742,40 +742,40 @@ NOTES: <br>
 <p> 2.8969e-08 </p>
 </td>
 <td style="border-style: inset;">
-<p> 46.246 </p>
+<p> 46.238 </p>
 </td>
 <td style="border-style: inset;">
-<p> 172.804 </p>
+<p> 172.325 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 54.531 </p>
+<p> 5.627 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5.723 </p>
+<p> 54.424 </p>
 </td>
 <td style="border-style: inset;">
 <p> 16 </p>
 </td>
 <td style="border-style: inset;">
-<p> 31.256 </p>
+<p> 30.8909 </p>
 </td>
 <td style="border-style: inset;">
-<p> 109.885 </p>
+<p> 109.779 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.39181 </p>
+<p> 1.39316 </p>
 </td>
 <td style="border-style: inset;">
-<p> 242.73 </p>
+<p> 242.711 </p>
 </td>
 <td style="border-style: inset;">
-<p> 58.2075 </p>
+<p> 58.1549 </p>
 </td>
 <td style="border-style: inset;">
-<p> 775.153 </p>
+<p> 773.63 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -784,22 +784,22 @@ NOTES: <br>
 <p> 4.75 </p>
 </td>
 <td style="border-style: inset;">
-<p> 441.328 </p>
+<p> 441.537 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1216.48 </p>
+<p> 1215.17 </p>
 </td>
 <td style="border-style: inset;">
 <p> 652.807 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.86346 </p>
+<p> 1.86145 </p>
 </td>
 <td style="border-style: inset;">
 <p> 967.464 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.795297 </FONT> </p>
+<p> <FONT COLOR="Red">0.796157 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -1024,19 +1024,19 @@ NOTES: <br>
 <p> 0.00245879 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7.119 </p>
+<p> 7.021 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20.146 </p>
+<p> 20.242 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.81 </p>
+<p> 5.931 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6.07 </p>
+<p> 1.792 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -1045,19 +1045,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 157.708 </p>
+<p> 157.354 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3.15216 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 3.15925 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 201.6 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 201.129 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -1066,22 +1066,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 123.952 </p>
+<p> 123.709 </p>
 </td>
 <td style="border-style: inset;">
-<p> 325.552 </p>
+<p> 324.838 </p>
 </td>
 <td style="border-style: inset;">
 <p> 172.326 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.88916 </p>
+<p> 1.88502 </p>
 </td>
 <td style="border-style: inset;">
-<p> 332.336 </p>
+<p> 325.552 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.02084 </p>
+<p> 1.0022 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -1122,40 +1122,40 @@ NOTES: <br>
 <p> 1.10303e-08 </p>
 </td>
 <td style="border-style: inset;">
-<p> 51.56 </p>
+<p> 51.407 </p>
 </td>
 <td style="border-style: inset;">
-<p> 142.818 </p>
+<p> 143.41 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 35.422 </p>
+<p> 7.984 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8.176 </p>
+<p> 35.791 </p>
 </td>
 <td style="border-style: inset;">
 <p> 8 </p>
 </td>
 <td style="border-style: inset;">
-<p> 9.35981 </p>
+<p> 9.20515 </p>
 </td>
 <td style="border-style: inset;">
-<p> 69.7366 </p>
+<p> 69.6122 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5.56942 </p>
+<p> 5.57937 </p>
 </td>
 <td style="border-style: inset;">
-<p> 108.511 </p>
+<p> 108.557 </p>
 </td>
 <td style="border-style: inset;">
-<p> 17.5106 </p>
+<p> 17.4773 </p>
 </td>
 <td style="border-style: inset;">
-<p> 460.996 </p>
+<p> 461.21 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -1164,22 +1164,22 @@ NOTES: <br>
 <p> 6.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 301.781 </p>
+<p> 300.641 </p>
 </td>
 <td style="border-style: inset;">
-<p> 762.777 </p>
+<p> 761.851 </p>
 </td>
 <td style="border-style: inset;">
 <p> 690.102 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.10531 </p>
+<p> 1.10397 </p>
 </td>
 <td style="border-style: inset;">
 <p> 660.778 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.866279 </FONT> </p>
+<p> <FONT COLOR="Red">0.867332 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -1315,37 +1315,37 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 256.507 </p>
+<p> 250.655 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 67.411 </p>
+<p> 9.339 </p>
 </td>
 <td style="border-style: inset;">
-<p> 9.873 </p>
+<p> 67.84 </p>
 </td>
 <td style="border-style: inset;">
 <p> 8 </p>
 </td>
 <td style="border-style: inset;">
-<p> 42.2136 </p>
+<p> 42.2885 </p>
 </td>
 <td style="border-style: inset;">
-<p> 141.29 </p>
+<p> 141.15 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5.67477 </p>
+<p> 5.68038 </p>
 </td>
 <td style="border-style: inset;">
-<p> 745.205 </p>
+<p> 745.286 </p>
 </td>
 <td style="border-style: inset;">
-<p> 170.371 </p>
+<p> 169.748 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1458.88 </p>
+<p> 1452.2 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -1354,22 +1354,22 @@ NOTES: <br>
 <p> 31.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1603.32 </p>
+<p> 1602.43 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3062.2 </p>
+<p> 3054.63 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1140.91 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.684 </p>
+<p> 2.67736 </p>
 </td>
 <td style="border-style: inset;">
 <p> 2639.99 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.862122 </FONT> </p>
+<p> <FONT COLOR="Red">0.864259 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -1778,19 +1778,19 @@ NOTES: <br>
 <p> 6.7616e-06 </p>
 </td>
 <td style="border-style: inset;">
-<p> 67.798 </p>
+<p> 66.916 </p>
 </td>
 <td style="border-style: inset;">
-<p> 66.647 </p>
+<p> 64.873 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.649 </p>
+<p> 10.132 </p>
 </td>
 <td style="border-style: inset;">
-<p> 9.315 </p>
+<p> 1.657 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -1799,19 +1799,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2992.91 </p>
+<p> 2993.18 </p>
 </td>
 <td style="border-style: inset;">
-<p> 19.7579 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 19.7561 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3154.91 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3153.36 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -1820,22 +1820,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 941.152 </p>
+<p> 940.905 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4096.07 </p>
+<p> 4094.27 </p>
 </td>
 <td style="border-style: inset;">
 <p> 471.76 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">8.68252 </FONT> </p>
+<p> <FONT COLOR="Red">8.67871 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 4106.03 </p>
+<p> 4096.07 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00243 </p>
+<p> 1.00044 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -1876,19 +1876,19 @@ NOTES: <br>
 <p> 7.23595e-10 </p>
 </td>
 <td style="border-style: inset;">
-<p> 17.714 </p>
+<p> 17.886 </p>
 </td>
 <td style="border-style: inset;">
-<p> 109.276 </p>
+<p> 110.122 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3.972 </p>
+<p> 10.964 </p>
 </td>
 <td style="border-style: inset;">
-<p> 11.166 </p>
+<p> 3.977 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -1897,19 +1897,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3079.89 </p>
+<p> 3079.76 </p>
 </td>
 <td style="border-style: inset;">
-<p> 18.8134 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 18.8142 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3244.06 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3245.19 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -1918,22 +1918,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1109.77 </p>
+<p> 1109.39 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4353.84 </p>
+<p> 4354.59 </p>
 </td>
 <td style="border-style: inset;">
 <p> 412.333 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">10.559 </FONT> </p>
+<p> <FONT COLOR="Red">10.5608 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 4369.34 </p>
+<p> 4353.84 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00356 </p>
+<p> 0.999829 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -2437,16 +2437,16 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 581.528 </p>
+<p> 553.379 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 35.372 </p>
+<p> 38.741 </p>
 </td>
 <td style="border-style: inset;">
-<p> 52.018 </p>
+<p> 29.887 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -2455,19 +2455,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 569.11 </p>
+<p> 568.999 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8.56109 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 8.56275 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1578.09 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1516.83 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -2476,22 +2476,22 @@ NOTES: <br>
 <p> 0.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 222.766 </p>
+<p> 222.725 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1800.86 </p>
+<p> 1739.56 </p>
 </td>
 <td style="border-style: inset;">
 <p> 2270.89 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Green">0.793018 </FONT> </p>
+<p> <FONT COLOR="Green">0.766024 </FONT> </p>
 </td>
 <td style="border-style: inset;">
 <p> 1518.44 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.843176 </FONT> </p>
+<p> <FONT COLOR="Red">0.872889 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -2719,16 +2719,16 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 307.524 </p>
+<p> 306.56 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 16.45 </p>
+<p> 34.659 </p>
 </td>
 <td style="border-style: inset;">
-<p> 35.802 </p>
+<p> 16.45 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -2737,19 +2737,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6867.76 </p>
+<p> 6867.7 </p>
 </td>
 <td style="border-style: inset;">
-<p> 46.5926 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 46.593 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7294.65 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 7291.69 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -2758,22 +2758,22 @@ NOTES: <br>
 <p> 0.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1299.36 </p>
+<p> 1298.36 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8594.01 </p>
+<p> 8590.06 </p>
 </td>
 <td style="border-style: inset;">
 <p> 2164.91 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3.96968 </p>
+<p> 3.96786 </p>
 </td>
 <td style="border-style: inset;">
 <p> 8588.88 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.999403 </p>
+<p> 0.999863 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -2817,16 +2817,16 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 540.012 </p>
+<p> 509.974 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 25.671 </p>
+<p> 57.573 </p>
 </td>
 <td style="border-style: inset;">
-<p> 67.018 </p>
+<p> 25.539 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -2835,19 +2835,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6601.06 </p>
+<p> 6601.34 </p>
 </td>
 <td style="border-style: inset;">
-<p> 38.96 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 38.9584 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7354.6 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 7299.78 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -2856,22 +2856,22 @@ NOTES: <br>
 <p> 0.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1784.16 </p>
+<p> 1783.66 </p>
 </td>
 <td style="border-style: inset;">
-<p> 9138.76 </p>
+<p> 9083.44 </p>
 </td>
 <td style="border-style: inset;">
 <p> 4275.28 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.13758 </p>
+<p> 2.12464 </p>
 </td>
 <td style="border-style: inset;">
 <p> 9083.45 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.993947 </p>
+<p> 1 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -3188,19 +3188,19 @@ NOTES: <br>
 <p> 2.10997e-10 </p>
 </td>
 <td style="border-style: inset;">
-<p> 15.345 </p>
+<p> 15.147 </p>
 </td>
 <td style="border-style: inset;">
-<p> 141.999 </p>
+<p> 141.167 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.832 </p>
+<p> 11.491 </p>
 </td>
 <td style="border-style: inset;">
-<p> 11.861 </p>
+<p> 2.78 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -3209,19 +3209,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 801.717 </p>
+<p> 800.594 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8.13087 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 8.14227 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 989.84 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 986.477 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -3230,22 +3230,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 526.261 </p>
+<p> 526.211 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1516.1 </p>
+<p> 1512.69 </p>
 </td>
 <td style="border-style: inset;">
 <p> 555.226 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.7306 </p>
+<p> 2.72445 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1490.46 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.983088 </p>
+<p> 0.985306 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -3286,19 +3286,19 @@ NOTES: <br>
 <p> 2.97442e-08 </p>
 </td>
 <td style="border-style: inset;">
-<p> 382.187 </p>
+<p> 381.102 </p>
 </td>
 <td style="border-style: inset;">
-<p> 141.171 </p>
+<p> 141.2 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7.853 </p>
+<p> 20.494 </p>
 </td>
 <td style="border-style: inset;">
-<p> 23.319 </p>
+<p> 7.875 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -3307,19 +3307,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1333.52 </p>
+<p> 1333.17 </p>
 </td>
 <td style="border-style: inset;">
-<p> 16.1445 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 16.1487 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1979.84 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1976.18 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -3328,22 +3328,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 518.498 </p>
+<p> 518.253 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2498.34 </p>
+<p> 2494.43 </p>
 </td>
 <td style="border-style: inset;">
 <p> 464.558 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">5.37788 </FONT> </p>
+<p> <FONT COLOR="Red">5.36948 </FONT> </p>
 </td>
 <td style="border-style: inset;">
 <p> 2478.23 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.991951 </p>
+<p> 0.993504 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -3384,19 +3384,19 @@ NOTES: <br>
 <p> 4.31058e-12 </p>
 </td>
 <td style="border-style: inset;">
-<p> 11.188 </p>
+<p> 11.17 </p>
 </td>
 <td style="border-style: inset;">
-<p> 34.882 </p>
+<p> 34.453 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.544 </p>
+<p> 7.837 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8.107 </p>
+<p> 1.544 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -3405,19 +3405,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 170.577 </p>
+<p> 170.592 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.0134233 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 0.0134221 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 235.712 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 235.149 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -3426,22 +3426,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 223.628 </p>
+<p> 223.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 459.34 </p>
+<p> 458.649 </p>
 </td>
 <td style="border-style: inset;">
 <p> 67.605 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">6.79447 </FONT> </p>
+<p> <FONT COLOR="Red">6.78425 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 469.457 </p>
+<p> 459.34 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.02203 </p>
+<p> 1.00151 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -3485,16 +3485,16 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 217.502 </p>
+<p> 219.099 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8.568 </p>
+<p> 20.492 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20.996 </p>
+<p> 8.551 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -3503,19 +3503,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1153.28 </p>
+<p> 1152.54 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20.7363 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 20.7495 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1431.83 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1431.82 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -3524,22 +3524,22 @@ NOTES: <br>
 <p> 0.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 357.642 </p>
+<p> 357.6 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1789.47 </p>
+<p> 1789.42 </p>
 </td>
 <td style="border-style: inset;">
 <p> 385.602 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4.64072 </p>
+<p> 4.6406 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1789.41 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.999966 </p>
+<p> 0.999993 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -3580,19 +3580,19 @@ NOTES: <br>
 <p> 3.85855e-10 </p>
 </td>
 <td style="border-style: inset;">
-<p> 39.797 </p>
+<p> 38.54 </p>
 </td>
 <td style="border-style: inset;">
-<p> 88.737 </p>
+<p> 88.619 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3.431 </p>
+<p> 7.346 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7.849 </p>
+<p> 3.42 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -3601,19 +3601,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2569.03 </p>
+<p> 2568.27 </p>
 </td>
 <td style="border-style: inset;">
-<p> 23.1885 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 23.1953 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2756.2 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2753.54 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -3622,22 +3622,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 872.869 </p>
+<p> 872.502 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3629.07 </p>
+<p> 3626.04 </p>
 </td>
 <td style="border-style: inset;">
 <p> 2568.14 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.41311 </p>
+<p> 1.41193 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3642.27 </p>
+<p> 3629.07 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00364 </p>
+<p> 1.00083 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -3678,40 +3678,40 @@ NOTES: <br>
 <p> 2.98458e-07 </p>
 </td>
 <td style="border-style: inset;">
-<p> 17.09 </p>
+<p> 16.961 </p>
 </td>
 <td style="border-style: inset;">
-<p> 174.893 </p>
+<p> 175.601 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 27.277 </p>
+<p> 8.878 </p>
 </td>
 <td style="border-style: inset;">
-<p> 9.143 </p>
+<p> 27.543 </p>
 </td>
 <td style="border-style: inset;">
 <p> 10 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7.35485 </p>
+<p> 7.31626 </p>
 </td>
 <td style="border-style: inset;">
-<p> 142.138 </p>
+<p> 142.006 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4.0597 </p>
+<p> 4.06348 </p>
 </td>
 <td style="border-style: inset;">
-<p> 220.767 </p>
+<p> 220.548 </p>
 </td>
 <td style="border-style: inset;">
-<p> 10.7643 </p>
+<p> 10.7499 </p>
 </td>
 <td style="border-style: inset;">
-<p> 627.745 </p>
+<p> 628.336 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -3720,22 +3720,22 @@ NOTES: <br>
 <p> 15.75 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1789.88 </p>
+<p> 1785.97 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2417.62 </p>
+<p> 2414.3 </p>
 </td>
 <td style="border-style: inset;">
 <p> 567.711 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4.25855 </p>
+<p> 4.2527 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1733.41 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.716989 </FONT> </p>
+<p> <FONT COLOR="Red">0.717975 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -3776,40 +3776,40 @@ NOTES: <br>
 <p>  </p>
 </td>
 <td style="border-style: inset;">
-<p> 57.753 </p>
+<p> 58.074 </p>
 </td>
 <td style="border-style: inset;">
-<p> 275.721 </p>
+<p> 275.38 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 90.776 </p>
+<p> 14.988 </p>
 </td>
 <td style="border-style: inset;">
-<p> 16.017 </p>
+<p> 86.823 </p>
 </td>
 <td style="border-style: inset;">
 <p> 8 </p>
 </td>
 <td style="border-style: inset;">
-<p> 73.9308 </p>
+<p> 44.5989 </p>
 </td>
 <td style="border-style: inset;">
-<p> 82.4844 </p>
+<p> 82.4495 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6.94261 </p>
+<p> 6.94555 </p>
 </td>
 <td style="border-style: inset;">
-<p> 203.743 </p>
+<p> 198.517 </p>
 </td>
 <td style="border-style: inset;">
-<p> 189.926 </p>
+<p> 189.486 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1030.42 </p>
+<p> 986.604 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -3818,10 +3818,10 @@ NOTES: <br>
 <p> 100.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5292.03 </p>
+<p> 5292.09 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6322.45 </p>
+<p> 6278.69 </p>
 </td>
 <td style="border-style: inset;">
 <p> 750.438 </p>
@@ -3874,40 +3874,40 @@ NOTES: <br>
 <p>  </p>
 </td>
 <td style="border-style: inset;">
-<p> 19.434 </p>
+<p> 19.33 </p>
 </td>
 <td style="border-style: inset;">
-<p> 34.278 </p>
+<p> 33.294 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 13.999 </p>
+<p> 3.094 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3.133 </p>
+<p> 14.364 </p>
 </td>
 <td style="border-style: inset;">
 <p> 6 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.29146 </p>
+<p> 1.29891 </p>
 </td>
 <td style="border-style: inset;">
-<p> 18.4895 </p>
+<p> 18.4718 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.5427 </p>
+<p> 2.54513 </p>
 </td>
 <td style="border-style: inset;">
-<p> 28.4303 </p>
+<p> 28.318 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.42688 </p>
+<p> 1.4265 </p>
 </td>
 <td style="border-style: inset;">
-<p> 147.523 </p>
+<p> 146.627 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -3916,10 +3916,10 @@ NOTES: <br>
 <p> 100.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3032.25 </p>
+<p> 3020.35 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3179.77 </p>
+<p> 3166.98 </p>
 </td>
 <td style="border-style: inset;">
 <p> 100.435 </p>
@@ -3972,19 +3972,19 @@ NOTES: <br>
 <p> 0.741257 </p>
 </td>
 <td style="border-style: inset;">
-<p> 251.21 </p>
+<p> 247.358 </p>
 </td>
 <td style="border-style: inset;">
-<p> 931.639 </p>
+<p> 833.261 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 45.346 </p>
+<p> 106.776 </p>
 </td>
 <td style="border-style: inset;">
-<p> 123.598 </p>
+<p> 41.972 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -3993,19 +3993,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 15797.6 </p>
+<p> 15790.9 </p>
 </td>
 <td style="border-style: inset;">
-<p> 29.2149 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 29.2273 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 17323.8 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 17183 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -4014,22 +4014,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2953.11 </p>
+<p> 2952.11 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20276.9 </p>
+<p> 20135.1 </p>
 </td>
 <td style="border-style: inset;">
 <p> 2150.45 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">9.42916 </FONT> </p>
+<p> <FONT COLOR="Red">9.36321 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 20378.9 </p>
+<p> 20276.9 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00503 </p>
+<p> 1.00704 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -4070,19 +4070,19 @@ NOTES: <br>
 <p> 1.23513e-09 </p>
 </td>
 <td style="border-style: inset;">
-<p> 131.511 </p>
+<p> 131.042 </p>
 </td>
 <td style="border-style: inset;">
-<p> 571.587 </p>
+<p> 572.063 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 21.551 </p>
+<p> 54.137 </p>
 </td>
 <td style="border-style: inset;">
-<p> 55.8 </p>
+<p> 21.489 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -4091,19 +4091,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 16414.7 </p>
+<p> 16413.9 </p>
 </td>
 <td style="border-style: inset;">
-<p> 25.9973 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 25.9986 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 17305.1 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 17302.7 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -4112,22 +4112,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3157.39 </p>
+<p> 3156.83 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20462.5 </p>
+<p> 20459.5 </p>
 </td>
 <td style="border-style: inset;">
 <p> 2551.44 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">8.01999 </FONT> </p>
+<p> <FONT COLOR="Red">8.0188 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 20588.1 </p>
+<p> 20462.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00614 </p>
+<p> 1.00015 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -4171,37 +4171,37 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 264.04 </p>
+<p> 264.282 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 194.862 </p>
+<p> 10.153 </p>
 </td>
 <td style="border-style: inset;">
-<p> 10.362 </p>
+<p> 194.795 </p>
 </td>
 <td style="border-style: inset;">
 <p> 12 </p>
 </td>
 <td style="border-style: inset;">
-<p> 181.844 </p>
+<p> 182.298 </p>
 </td>
 <td style="border-style: inset;">
-<p> 329.033 </p>
+<p> 328.973 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8.36205 </p>
+<p> 8.36358 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1932.61 </p>
+<p> 1933.12 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1490.42 </p>
+<p> 1492.49 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4432.98 </p>
+<p> 4435.33 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -4210,22 +4210,22 @@ NOTES: <br>
 <p> 1.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 135.939 </p>
+<p> 135.654 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4568.92 </p>
+<p> 4570.99 </p>
 </td>
 <td style="border-style: inset;">
 <p> 484.086 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">9.43824 </FONT> </p>
+<p> <FONT COLOR="Red">9.44251 </FONT> </p>
 </td>
 <td style="border-style: inset;">
 <p> 4556.63 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.997311 </p>
+<p> 0.996859 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -4542,40 +4542,40 @@ NOTES: <br>
 <p> 8.68376e-12 </p>
 </td>
 <td style="border-style: inset;">
-<p> 46.129 </p>
+<p> 44.8 </p>
 </td>
 <td style="border-style: inset;">
-<p> 107.51 </p>
+<p> 106.621 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20.271 </p>
+<p> 6.486 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6.294 </p>
+<p> 20.354 </p>
 </td>
 <td style="border-style: inset;">
 <p> 2 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.72131 </p>
+<p> 1.68506 </p>
 </td>
 <td style="border-style: inset;">
-<p> 133.426 </p>
+<p> 133.42 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6.10147 </p>
+<p> 6.10174 </p>
 </td>
 <td style="border-style: inset;">
-<p> 117.311 </p>
+<p> 117.458 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4.83133 </p>
+<p> 4.80675 </p>
 </td>
 <td style="border-style: inset;">
-<p> 451.927 </p>
+<p> 449.736 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -4584,22 +4584,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 76.328 </p>
+<p> 76.177 </p>
 </td>
 <td style="border-style: inset;">
-<p> 528.255 </p>
+<p> 525.913 </p>
 </td>
 <td style="border-style: inset;">
 <p> 177.361 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.97842 </p>
+<p> 2.96521 </p>
 </td>
 <td style="border-style: inset;">
 <p> 503.534 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.953203 </p>
+<p> 0.957447 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -4640,19 +4640,19 @@ NOTES: <br>
 <p> 5.48573e-09 </p>
 </td>
 <td style="border-style: inset;">
-<p> 50.545 </p>
+<p> 50.398 </p>
 </td>
 <td style="border-style: inset;">
-<p> 280.176 </p>
+<p> 280.45 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 11.678 </p>
+<p> 33.662 </p>
 </td>
 <td style="border-style: inset;">
-<p> 34.132 </p>
+<p> 11.96 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -4661,19 +4661,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4343.53 </p>
+<p> 4343.11 </p>
 </td>
 <td style="border-style: inset;">
-<p> 21.7993 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 21.8013 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4781.95 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4780.98 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -4682,22 +4682,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1376.73 </p>
+<p> 1376.15 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6158.68 </p>
+<p> 6157.13 </p>
 </td>
 <td style="border-style: inset;">
 <p> 2513.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.45049 </p>
+<p> 2.44987 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6246.34 </p>
+<p> 6158.68 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.01423 </p>
+<p> 1.00025 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -4833,16 +4833,16 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 105.949 </p>
+<p> 105.636 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4.713 </p>
+<p> 13.053 </p>
 </td>
 <td style="border-style: inset;">
-<p> 11.419 </p>
+<p> 4.652 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -4851,19 +4851,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 428.434 </p>
+<p> 428.127 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7.89277 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 7.89844 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 567.864 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 568.114 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -4872,22 +4872,22 @@ NOTES: <br>
 <p> 0.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 146.758 </p>
+<p> 146.589 </p>
 </td>
 <td style="border-style: inset;">
-<p> 714.622 </p>
+<p> 714.703 </p>
 </td>
 <td style="border-style: inset;">
 <p> 274.43 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.60402 </p>
+<p> 2.60432 </p>
 </td>
 <td style="border-style: inset;">
 <p> 693.909 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.971015 </p>
+<p> 0.970905 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -5112,19 +5112,19 @@ NOTES: <br>
 <p> 9.47281e-12 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1093.12 </p>
+<p> 1091.73 </p>
 </td>
 <td style="border-style: inset;">
-<p> 209.524 </p>
+<p> 209.493 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7.577 </p>
+<p> 24.892 </p>
 </td>
 <td style="border-style: inset;">
-<p> 26.342 </p>
+<p> 7.548 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -5133,19 +5133,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 16064.8 </p>
+<p> 16056.4 </p>
 </td>
 <td style="border-style: inset;">
-<p> 27.8986 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 27.9133 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 17458.2 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 17446.4 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -5154,22 +5154,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2671.56 </p>
+<p> 2671.93 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20129.8 </p>
+<p> 20118.3 </p>
 </td>
 <td style="border-style: inset;">
 <p> 2614.67 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">7.69879 </FONT> </p>
+<p> <FONT COLOR="Red">7.69439 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 20177.7 </p>
+<p> 20129.8 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00238 </p>
+<p> 1.00057 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -5210,19 +5210,19 @@ NOTES: <br>
 <p> 0.0236421 </p>
 </td>
 <td style="border-style: inset;">
-<p> 75.44 </p>
+<p> 73.209 </p>
 </td>
 <td style="border-style: inset;">
-<p> 61.876 </p>
+<p> 60.751 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.868 </p>
+<p> 11.359 </p>
 </td>
 <td style="border-style: inset;">
-<p> 10.748 </p>
+<p> 1.852 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -5231,19 +5231,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20771.1 </p>
+<p> 20760 </p>
 </td>
 <td style="border-style: inset;">
-<p> 29.9093 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 29.9251 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20950.7 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20937 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -5252,22 +5252,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2093.66 </p>
+<p> 2093.3 </p>
 </td>
 <td style="border-style: inset;">
-<p> 23044.4 </p>
+<p> 23030.3 </p>
 </td>
 <td style="border-style: inset;">
 <p> 827.741 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">27.8401 </FONT> </p>
+<p> <FONT COLOR="Red">27.823 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 23045.6 </p>
+<p> 23044.4 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00005 </p>
+<p> 1.00061 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -5492,19 +5492,19 @@ NOTES: <br>
 <p>  </p>
 </td>
 <td style="border-style: inset;">
-<p> 42530.4 </p>
+<p> 38950.2 </p>
 </td>
 <td style="border-style: inset;">
-<p> 642.302 </p>
+<p> 561.152 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 32.719 </p>
+<p> 70.534 </p>
 </td>
 <td style="border-style: inset;">
-<p> 90.531 </p>
+<p> 26.452 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -5513,19 +5513,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7292.38 </p>
+<p> 7292.86 </p>
 </td>
 <td style="border-style: inset;">
-<p> 26.2039 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 26.2022 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 50716.9 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 47012.9 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -5534,10 +5534,10 @@ NOTES: <br>
 <p> 100.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 228541 </p>
+<p> 228507 </p>
 </td>
 <td style="border-style: inset;">
-<p> 279258 </p>
+<p> 275520 </p>
 </td>
 <td style="border-style: inset;">
 <p> 17219.4 </p>
@@ -5590,19 +5590,19 @@ NOTES: <br>
 <p> 0.00171278 </p>
 </td>
 <td style="border-style: inset;">
-<p> 103.983 </p>
+<p> 104.205 </p>
 </td>
 <td style="border-style: inset;">
-<p> 30.94 </p>
+<p> 30.129 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.158 </p>
+<p> 5.818 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5.982 </p>
+<p> 1.125 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -5611,19 +5611,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 97.5891 </p>
+<p> 97.4528 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5.28762 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 5.29501 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 246.98 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 245.868 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -5632,22 +5632,22 @@ NOTES: <br>
 <p> 0.75 </p>
 </td>
 <td style="border-style: inset;">
-<p> 123.081 </p>
+<p> 122.959 </p>
 </td>
 <td style="border-style: inset;">
-<p> 370.061 </p>
+<p> 368.827 </p>
 </td>
 <td style="border-style: inset;">
 <p> 252.279 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.46687 </p>
+<p> 1.46198 </p>
 </td>
 <td style="border-style: inset;">
 <p> 315.595 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.852819 </FONT> </p>
+<p> <FONT COLOR="Red">0.855672 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -5688,19 +5688,19 @@ NOTES: <br>
 <p>  </p>
 </td>
 <td style="border-style: inset;">
-<p> 2431.92 </p>
+<p> 2428.78 </p>
 </td>
 <td style="border-style: inset;">
-<p> 324.809 </p>
+<p> 272.033 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 13.219 </p>
+<p> 30.389 </p>
 </td>
 <td style="border-style: inset;">
-<p> 36.598 </p>
+<p> 10.048 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -5709,19 +5709,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6172.64 </p>
+<p> 6172.83 </p>
 </td>
 <td style="border-style: inset;">
-<p> 23.1576 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 23.1569 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 9032.87 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8967.18 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -5730,10 +5730,10 @@ NOTES: <br>
 <p> 100.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 199527 </p>
+<p> 199492 </p>
 </td>
 <td style="border-style: inset;">
-<p> 208560 </p>
+<p> 208459 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1782.24 </p>
@@ -5970,19 +5970,19 @@ NOTES: <br>
 <p> 7.34545e-05 </p>
 </td>
 <td style="border-style: inset;">
-<p> 168.624 </p>
+<p> 170.343 </p>
 </td>
 <td style="border-style: inset;">
-<p> 69.841 </p>
+<p> 69.845 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.968 </p>
+<p> 8.964 </p>
 </td>
 <td style="border-style: inset;">
-<p> 9.075 </p>
+<p> 1.927 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -5991,19 +5991,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6831.4 </p>
+<p> 6831.11 </p>
 </td>
 <td style="border-style: inset;">
-<p> 25.2791 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 25.2802 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7101.85 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 7101.59 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -6012,22 +6012,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1135.27 </p>
+<p> 1134.95 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8237.12 </p>
+<p> 8236.54 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1163.11 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">7.08198 </FONT> </p>
+<p> <FONT COLOR="Red">7.08148 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 8249.91 </p>
+<p> 8237.12 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00155 </p>
+<p> 1.00007 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -6068,19 +6068,19 @@ NOTES: <br>
 <p> 0.000149328 </p>
 </td>
 <td style="border-style: inset;">
-<p> 267.616 </p>
+<p> 263.404 </p>
 </td>
 <td style="border-style: inset;">
-<p> 107.472 </p>
+<p> 107.433 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.83 </p>
+<p> 12.151 </p>
 </td>
 <td style="border-style: inset;">
-<p> 12.937 </p>
+<p> 2.833 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -6089,19 +6089,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 9889.49 </p>
+<p> 9888.47 </p>
 </td>
 <td style="border-style: inset;">
-<p> 25.3227 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 25.3253 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 10306.9 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10300.6 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -6110,22 +6110,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1589.04 </p>
+<p> 1588.18 </p>
 </td>
 <td style="border-style: inset;">
-<p> 11895.9 </p>
+<p> 11888.8 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1884.63 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">6.31206 </FONT> </p>
+<p> <FONT COLOR="Red">6.30829 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 11906.2 </p>
+<p> 11895.9 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00087 </p>
+<p> 1.0006 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -6258,40 +6258,40 @@ NOTES: <br>
 <p> 1.09302e-09 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7.485 </p>
+<p> 7.409 </p>
 </td>
 <td style="border-style: inset;">
-<p> 44.119 </p>
+<p> 43.004 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 21.038 </p>
+<p> 3.213 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3.253 </p>
+<p> 20.82 </p>
 </td>
 <td style="border-style: inset;">
 <p> 28 </p>
 </td>
 <td style="border-style: inset;">
-<p> 11.0013 </p>
+<p> 10.8538 </p>
 </td>
 <td style="border-style: inset;">
-<p> 14.7185 </p>
+<p> 14.7009 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.594045 </p>
+<p> 0.594754 </p>
 </td>
 <td style="border-style: inset;">
-<p> 42.3142 </p>
+<p> 43.4275 </p>
 </td>
 <td style="border-style: inset;">
-<p> 12.4227 </p>
+<p> 12.4156 </p>
 </td>
 <td style="border-style: inset;">
-<p> 179.167 </p>
+<p> 178.542 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -6300,22 +6300,22 @@ NOTES: <br>
 <p> 4.75 </p>
 </td>
 <td style="border-style: inset;">
-<p> 124.185 </p>
+<p> 123.696 </p>
 </td>
 <td style="border-style: inset;">
-<p> 303.352 </p>
+<p> 302.238 </p>
 </td>
 <td style="border-style: inset;">
 <p> 141.576 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.14268 </p>
+<p> 2.13481 </p>
 </td>
 <td style="border-style: inset;">
 <p> 261.491 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.862005 </FONT> </p>
+<p> <FONT COLOR="Red">0.865182 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -6356,19 +6356,19 @@ NOTES: <br>
 <p> 2.17558e-06 </p>
 </td>
 <td style="border-style: inset;">
-<p> 25.753 </p>
+<p> 26.024 </p>
 </td>
 <td style="border-style: inset;">
-<p> 88.953 </p>
+<p> 88.826 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3.649 </p>
+<p> 9.083 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8.139 </p>
+<p> 3.648 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -6377,19 +6377,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3189.16 </p>
+<p> 3189.51 </p>
 </td>
 <td style="border-style: inset;">
-<p> 23.0211 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 23.0186 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3359.71 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3361.92 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -6398,22 +6398,120 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 887.221 </p>
+<p> 887.07 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4246.93 </p>
+<p> 4248.99 </p>
 </td>
 <td style="border-style: inset;">
 <p> 363.267 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">11.6909 </FONT> </p>
+<p> <FONT COLOR="Red">11.6966 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 4255.77 </p>
+<p> 4246.93 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00208 </p>
+<p> 0.999516 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> new-lhs </p>
+</td>
+<td style="border-style: inset;">
+<p> 63603 </p>
+</td>
+<td style="border-style: inset;">
+<p> 569262 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 62897 </p>
+</td>
+<td style="border-style: inset;">
+<p> 818 </p>
+</td>
+<td style="border-style: inset;">
+<p> 818 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.938519 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.92519e-08 </p>
+</td>
+<td style="border-style: inset;">
+<p> 45.449 </p>
+</td>
+<td style="border-style: inset;">
+<p> 192.653 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10.237 </p>
+</td>
+<td style="border-style: inset;">
+<p> 119.748 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> 95.487 </p>
+</td>
+<td style="border-style: inset;">
+<p> 93.963 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.30753 </p>
+</td>
+<td style="border-style: inset;">
+<p> 304.283 </p>
+</td>
+<td style="border-style: inset;">
+<p> 405.68 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1291.72 </p>
+</td>
+<td style="border-style: inset;">
+<p> B2 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 338.721 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1630.44 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
 </td>
 </tr>
 <tr valign=top>
@@ -6457,16 +6555,16 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 531.587 </p>
+<p> 501.228 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 31.39 </p>
+<p> 64.838 </p>
 </td>
 <td style="border-style: inset;">
-<p> 77.853 </p>
+<p> 27.341 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -6475,19 +6573,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3512.32 </p>
+<p> 3512.27 </p>
 </td>
 <td style="border-style: inset;">
-<p> 34.9674 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 34.9679 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4248.14 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4197.76 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -6496,22 +6594,22 @@ NOTES: <br>
 <p> 0.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 854.908 </p>
+<p> 854.42 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5103.04 </p>
+<p> 5052.18 </p>
 </td>
 <td style="border-style: inset;">
 <p> 842.539 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">6.05675 </FONT> </p>
+<p> <FONT COLOR="Red">5.99638 </FONT> </p>
 </td>
 <td style="border-style: inset;">
 <p> 5056.87 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.990952 </p>
+<p> 1.00093 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -6552,19 +6650,19 @@ NOTES: <br>
 <p> <FONT COLOR="Red">5.15319e+07 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 79.806 </p>
+<p> 79.825 </p>
 </td>
 <td style="border-style: inset;">
-<p> 205.938 </p>
+<p> 205.776 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8.722 </p>
+<p> 18.265 </p>
 </td>
 <td style="border-style: inset;">
-<p> 18.768 </p>
+<p> 8.683 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -6573,19 +6671,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3240.46 </p>
+<p> 3239.72 </p>
 </td>
 <td style="border-style: inset;">
-<p> 16.9331 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 16.9369 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3588.03 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3587.17 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -6594,22 +6692,22 @@ NOTES: <br>
 <p> 0.75 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2370.51 </p>
+<p> 2369.78 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5958.55 </p>
+<p> 5956.95 </p>
 </td>
 <td style="border-style: inset;">
 <p> 566.995 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">10.509 </FONT> </p>
+<p> <FONT COLOR="Red">10.5062 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 5992.86 </p>
+<p> 5958.55 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00576 </p>
+<p> 1.00027 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -6650,19 +6748,19 @@ NOTES: <br>
 <p> 0.00164001 </p>
 </td>
 <td style="border-style: inset;">
-<p> 23.529 </p>
+<p> 23.455 </p>
 </td>
 <td style="border-style: inset;">
-<p> 106.699 </p>
+<p> 106.533 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3.375 </p>
+<p> 11.699 </p>
 </td>
 <td style="border-style: inset;">
-<p> 12.054 </p>
+<p> 3.382 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -6671,19 +6769,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2394.85 </p>
+<p> 2394.27 </p>
 </td>
 <td style="border-style: inset;">
-<p> 21.5366 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 21.5418 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2561.41 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2559.62 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -6692,22 +6790,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 900.789 </p>
+<p> 900.316 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3462.2 </p>
+<p> 3459.94 </p>
 </td>
 <td style="border-style: inset;">
 <p> 77.842 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">44.4772 </FONT> </p>
+<p> <FONT COLOR="Red">44.4482 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 3482.43 </p>
+<p> 3462.2 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00584 </p>
+<p> 1.00065 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -6843,37 +6941,37 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 472.299 </p>
+<p> 445.049 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 188.847 </p>
+<p> 22.3 </p>
 </td>
 <td style="border-style: inset;">
-<p> 25.523 </p>
+<p> 187.33 </p>
 </td>
 <td style="border-style: inset;">
 <p> 12 </p>
 </td>
 <td style="border-style: inset;">
-<p> 187.702 </p>
+<p> 114.618 </p>
 </td>
 <td style="border-style: inset;">
-<p> 179.108 </p>
+<p> 179.021 </p>
 </td>
 <td style="border-style: inset;">
-<p> 15.7862 </p>
+<p> 15.7939 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1612.43 </p>
+<p> 1609.3 </p>
 </td>
 <td style="border-style: inset;">
-<p> 682.378 </p>
+<p> 683.506 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3413.45 </p>
+<p> 3302.5 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -6882,22 +6980,22 @@ NOTES: <br>
 <p> 2.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 120.44 </p>
+<p> 120.332 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3533.89 </p>
+<p> 3422.83 </p>
 </td>
 <td style="border-style: inset;">
 <p> 2356.37 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.49972 </p>
+<p> 1.45259 </p>
 </td>
 <td style="border-style: inset;">
 <p> 3220.99 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.911457 </FONT> </p>
+<p> <FONT COLOR="Red">0.94103 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -6938,40 +7036,40 @@ NOTES: <br>
 <p> 6.39078e-07 </p>
 </td>
 <td style="border-style: inset;">
-<p> 21.913 </p>
+<p> 21.939 </p>
 </td>
 <td style="border-style: inset;">
-<p> 210.806 </p>
+<p> 211.053 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 46.989 </p>
+<p> 10.491 </p>
 </td>
 <td style="border-style: inset;">
-<p> 10.721 </p>
+<p> 47.859 </p>
 </td>
 <td style="border-style: inset;">
 <p> 8 </p>
 </td>
 <td style="border-style: inset;">
-<p> 11.5524 </p>
+<p> 11.4057 </p>
 </td>
 <td style="border-style: inset;">
-<p> 146.392 </p>
+<p> 146.052 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3.07259 </p>
+<p> 3.07974 </p>
 </td>
 <td style="border-style: inset;">
-<p> 325.043 </p>
+<p> 325.213 </p>
 </td>
 <td style="border-style: inset;">
-<p> 24.2586 </p>
+<p> 24.3149 </p>
 </td>
 <td style="border-style: inset;">
-<p> 821.735 </p>
+<p> 821.326 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -6980,22 +7078,22 @@ NOTES: <br>
 <p> 8.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1158.63 </p>
+<p> 1157.03 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1980.36 </p>
+<p> 1978.36 </p>
 </td>
 <td style="border-style: inset;">
 <p> 261.828 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">7.5636 </FONT> </p>
+<p> <FONT COLOR="Red">7.55595 </FONT> </p>
 </td>
 <td style="border-style: inset;">
 <p> 1608.74 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.812346 </FONT> </p>
+<p> <FONT COLOR="Red">0.813169 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -7128,40 +7226,40 @@ NOTES: <br>
 <p> 4.03388e-06 </p>
 </td>
 <td style="border-style: inset;">
-<p> 177.784 </p>
+<p> 163.878 </p>
 </td>
 <td style="border-style: inset;">
-<p> 703.084 </p>
+<p> 664.731 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 162.083 </p>
+<p> 30.899 </p>
 </td>
 <td style="border-style: inset;">
-<p> 36.407 </p>
+<p> 159.169 </p>
 </td>
 <td style="border-style: inset;">
 <p> 8 </p>
 </td>
 <td style="border-style: inset;">
-<p> 53.1463 </p>
+<p> 32.2998 </p>
 </td>
 <td style="border-style: inset;">
-<p> 395.837 </p>
+<p> 395.715 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6.10043 </p>
+<p> 6.10231 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1911.29 </p>
+<p> 1890.93 </p>
 </td>
 <td style="border-style: inset;">
-<p> 111.276 </p>
+<p> 111.347 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3642.5 </p>
+<p> 3522.01 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -7170,22 +7268,22 @@ NOTES: <br>
 <p> 11.75 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1385.08 </p>
+<p> 1384.55 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5027.58 </p>
+<p> 4906.56 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1019.62 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4.93084 </p>
+<p> 4.81214 </p>
 </td>
 <td style="border-style: inset;">
 <p> 4291.54 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.853599 </FONT> </p>
+<p> <FONT COLOR="Red">0.874654 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -7229,37 +7327,37 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 137.57 </p>
+<p> 134.874 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 34.238 </p>
+<p> 7.219 </p>
 </td>
 <td style="border-style: inset;">
-<p> 7.324 </p>
+<p> 34.652 </p>
 </td>
 <td style="border-style: inset;">
 <p> 16 </p>
 </td>
 <td style="border-style: inset;">
-<p> 15.478 </p>
+<p> 15.3222 </p>
 </td>
 <td style="border-style: inset;">
-<p> 62.8459 </p>
+<p> 62.985 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.898606 </p>
+<p> 0.896622 </p>
 </td>
 <td style="border-style: inset;">
-<p> 158.572 </p>
+<p> 163.729 </p>
 </td>
 <td style="border-style: inset;">
-<p> 25.8148 </p>
+<p> 25.8714 </p>
 </td>
 <td style="border-style: inset;">
-<p> 456.919 </p>
+<p> 459.909 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -7268,22 +7366,22 @@ NOTES: <br>
 <p> 0.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 27.009 </p>
+<p> 26.273 </p>
 </td>
 <td style="border-style: inset;">
-<p> 483.928 </p>
+<p> 486.182 </p>
 </td>
 <td style="border-style: inset;">
 <p> 426.193 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.13547 </p>
+<p> 1.14076 </p>
 </td>
 <td style="border-style: inset;">
 <p> 451.757 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.933521 </FONT> </p>
+<p> <FONT COLOR="Red">0.929193 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -7327,37 +7425,37 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 134.978 </p>
+<p> 138.524 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 34.389 </p>
+<p> 7.245 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6.224 </p>
+<p> 34.296 </p>
 </td>
 <td style="border-style: inset;">
 <p> 16 </p>
 </td>
 <td style="border-style: inset;">
-<p> 15.4291 </p>
+<p> 15.3325 </p>
 </td>
 <td style="border-style: inset;">
-<p> 62.8038 </p>
+<p> 62.8616 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.899208 </p>
+<p> 0.898382 </p>
 </td>
 <td style="border-style: inset;">
-<p> 162.911 </p>
+<p> 160.417 </p>
 </td>
 <td style="border-style: inset;">
-<p> 25.8741 </p>
+<p> 25.8281 </p>
 </td>
 <td style="border-style: inset;">
-<p> 457.342 </p>
+<p> 459.467 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -7366,22 +7464,22 @@ NOTES: <br>
 <p> 1.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 50.378 </p>
+<p> 50.158 </p>
 </td>
 <td style="border-style: inset;">
-<p> 507.72 </p>
+<p> 509.625 </p>
 </td>
 <td style="border-style: inset;">
 <p> 323.293 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.57046 </p>
+<p> 1.57636 </p>
 </td>
 <td style="border-style: inset;">
 <p> 467.222 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.920236 </FONT> </p>
+<p> <FONT COLOR="Red">0.916796 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -7514,19 +7612,19 @@ NOTES: <br>
 <p> 7.24754e-15 </p>
 </td>
 <td style="border-style: inset;">
-<p> 94.885 </p>
+<p> 91.13 </p>
 </td>
 <td style="border-style: inset;">
-<p> 617.365 </p>
+<p> 583.038 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 21.744 </p>
+<p> 59.854 </p>
 </td>
 <td style="border-style: inset;">
-<p> 66.181 </p>
+<p> 21.212 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -7535,19 +7633,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5542.47 </p>
+<p> 5542.09 </p>
 </td>
 <td style="border-style: inset;">
-<p> 14.4842 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 14.4852 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 6468.3 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 6409.39 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -7556,22 +7654,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3464.14 </p>
+<p> 3462.89 </p>
 </td>
 <td style="border-style: inset;">
-<p> 9932.44 </p>
+<p> 9872.28 </p>
 </td>
 <td style="border-style: inset;">
 <p> 6224.64 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.59566 </p>
+<p> 1.586 </p>
 </td>
 <td style="border-style: inset;">
-<p> 10019.7 </p>
+<p> 9932.44 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.00879 </p>
+<p> 1.00609 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -7707,37 +7805,37 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 262.394 </p>
+<p> 257.668 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 46.475 </p>
+<p> 4.23 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4.275 </p>
+<p> 46.026 </p>
 </td>
 <td style="border-style: inset;">
 <p> 12 </p>
 </td>
 <td style="border-style: inset;">
-<p> 8.01706 </p>
+<p> 7.93466 </p>
 </td>
 <td style="border-style: inset;">
-<p> 91.8303 </p>
+<p> 91.7318 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4.4892 </p>
+<p> 4.49402 </p>
 </td>
 <td style="border-style: inset;">
-<p> 249.226 </p>
+<p> 249.086 </p>
 </td>
 <td style="border-style: inset;">
-<p> 11.2061 </p>
+<p> 11.1895 </p>
 </td>
 <td style="border-style: inset;">
-<p> 740.193 </p>
+<p> 735.742 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -7746,22 +7844,22 @@ NOTES: <br>
 <p> 21.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 664.109 </p>
+<p> 664.127 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1404.3 </p>
+<p> 1399.87 </p>
 </td>
 <td style="border-style: inset;">
 <p> 377.052 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3.72443 </p>
+<p> 3.71267 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1168.75 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">0.832264 </FONT> </p>
+<p> <FONT COLOR="Red">0.8349 </FONT> </p>
 </td>
 </tr>
 <tr valign=top>
@@ -7989,16 +8087,16 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 349.111 </p>
+<p> 349.845 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 19.836 </p>
+<p> 42.316 </p>
 </td>
 <td style="border-style: inset;">
-<p> 43.172 </p>
+<p> 19.767 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -8007,19 +8105,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2325.3 </p>
+<p> 2325.17 </p>
 </td>
 <td style="border-style: inset;">
-<p> 38.0571 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 38.0593 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2800.52 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2799.64 </p>
 </td>
 <td style="border-style: inset;">
 <p> CG </p>
@@ -8028,22 +8126,22 @@ NOTES: <br>
 <p> 0.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 553.865 </p>
+<p> 553.614 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3354.38 </p>
+<p> 3353.25 </p>
 </td>
 <td style="border-style: inset;">
 <p> 516.789 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">6.49082 </FONT> </p>
+<p> <FONT COLOR="Red">6.48863 </FONT> </p>
 </td>
 <td style="border-style: inset;">
 <p> 3350.79 </p>
 </td>
 <td style="border-style: inset;">
-<p> 0.998929 </p>
+<p> 0.999266 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -8084,19 +8182,19 @@ NOTES: <br>
 <p> 1.25056e-13 </p>
 </td>
 <td style="border-style: inset;">
-<p> 57.709 </p>
+<p> 57.552 </p>
 </td>
 <td style="border-style: inset;">
-<p> 273.321 </p>
+<p> 272.053 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 11.608 </p>
+<p> 33.364 </p>
 </td>
 <td style="border-style: inset;">
-<p> 33.688 </p>
+<p> 11.832 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -8105,19 +8203,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3309.89 </p>
+<p> 3309.5 </p>
 </td>
 <td style="border-style: inset;">
-<p> 20.8109 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 20.8133 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3740.97 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3738.17 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -8126,22 +8224,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1271.8 </p>
+<p> 1271.64 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5012.78 </p>
+<p> 5009.8 </p>
 </td>
 <td style="border-style: inset;">
 <p> 656.721 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">7.63304 </FONT> </p>
+<p> <FONT COLOR="Red">7.62851 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 5102.6 </p>
+<p> 5012.78 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.01792 </p>
+<p> 1.00059 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -8182,19 +8280,19 @@ NOTES: <br>
 <p> <FONT COLOR="Red">1.04419 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 31.477 </p>
+<p> 31.215 </p>
 </td>
 <td style="border-style: inset;">
-<p> 53.197 </p>
+<p> 51.491 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 2.419 </p>
+<p> 8.085 </p>
 </td>
 <td style="border-style: inset;">
-<p> 9.181 </p>
+<p> 2.409 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -8203,19 +8301,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4997.69 </p>
+<p> 4997.18 </p>
 </td>
 <td style="border-style: inset;">
-<p> 28.5142 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 28.5171 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5109.23 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 5106.24 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -8224,22 +8322,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 477.74 </p>
+<p> 477.454 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5586.97 </p>
+<p> 5583.69 </p>
 </td>
 <td style="border-style: inset;">
 <p> 312.401 </p>
 </td>
 <td style="border-style: inset;">
-<p> <FONT COLOR="Red">17.884 </FONT> </p>
+<p> <FONT COLOR="Red">17.8735 </FONT> </p>
 </td>
 <td style="border-style: inset;">
-<p> 5599.81 </p>
+<p> 5586.97 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.0023 </p>
+<p> 1.00059 </p>
 </td>
 </tr>
 <tr valign=top>
@@ -8280,19 +8378,19 @@ NOTES: <br>
 <p> 2.29434e-12 </p>
 </td>
 <td style="border-style: inset;">
-<p> 36.015 </p>
+<p> 35.831 </p>
 </td>
 <td style="border-style: inset;">
-<p> 250.522 </p>
+<p> 210.257 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 10.478 </p>
+<p> 12.657 </p>
 </td>
 <td style="border-style: inset;">
-<p> 17.062 </p>
+<p> 8.854 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1 </p>
@@ -8301,19 +8399,19 @@ NOTES: <br>
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3982.37 </p>
+<p> 3982.23 </p>
 </td>
 <td style="border-style: inset;">
-<p> 25.5568 </p>
-</td>
-<td style="border-style: inset;">
-<p> 0 </p>
+<p> 25.5577 </p>
 </td>
 <td style="border-style: inset;">
 <p> 0 </p>
 </td>
 <td style="border-style: inset;">
-<p> 4410.48 </p>
+<p> 0 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4362.98 </p>
 </td>
 <td style="border-style: inset;">
 <p> B2 </p>
@@ -8322,22 +8420,22 @@ NOTES: <br>
 <p> 0.25 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1027.79 </p>
+<p> 1027.42 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5438.26 </p>
+<p> 5390.4 </p>
 </td>
 <td style="border-style: inset;">
 <p> 1720.02 </p>
 </td>
 <td style="border-style: inset;">
-<p> 3.16174 </p>
+<p> 3.13392 </p>
 </td>
 <td style="border-style: inset;">
-<p> 5448.05 </p>
+<p> 5438.26 </p>
 </td>
 <td style="border-style: inset;">
-<p> 1.0018 </p>
+<p> 1.00888 </p>
 </td>
 </tr>
 </table>
