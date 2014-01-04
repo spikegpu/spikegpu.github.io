@@ -15,15 +15,6 @@ title: Nightly
 [1-4-2014 MC64 Tests ] (http://spikegpu.sbel.org/nightly_build/2014_1_4_mc64_1-0-0-release.html)
 
 
-[1-4-2014 Double Results] (http://spikegpu.sbel.org/nightly_build/2014_1_4_double_results_1-0-0-release-updated.html)
-
-
-[1-4-2014 Results] (http://spikegpu.sbel.org/nightly_build/2014_1_4_results_1-0-0-release-updated.html)
-
-
-[1-4-2014 MC64 Tests ] (http://spikegpu.sbel.org/nightly_build/2014_1_4_mc64_1-0-0-release.html)
-
-
 [1-3-2014 MC64 Tests ] (http://spikegpu.sbel.org/nightly_build/2014_1_3_mc64_1-0-0-release.html)
 
 
