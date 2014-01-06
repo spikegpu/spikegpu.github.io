@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[1-6-2014 Results] (http://spikegpu.sbel.org/nightly_build/2014_1_6_results_1-0-0-release-updated.html)
+
+
 [1-6-2014 MC64 Tests ] (http://spikegpu.sbel.org/nightly_build/2014_1_6_mc64_1-0-0-release.html)
 
 
