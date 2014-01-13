@@ -9,9 +9,6 @@ title: Nightly
 [1-13-2014 Double Results] (http://spikegpu.sbel.org/nightly_build/2014_1_13_double_results_krylov.html)
 
 
-[1-13-2014 Double Results] (http://spikegpu.sbel.org/nightly_build/2014_1_13_double_results_krylov.html)
-
-
 [1-13-2014 Double Results] (http://spikegpu.sbel.org/nightly_build/2014_1_13_double_results_1-0-0-release-updated.html)
 
 
