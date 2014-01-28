@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[1-24-2014 3D Results] (http://spikegpu.sbel.org/nightly_build/2014_1_24_3d_results_3d.html)
+
+
 [1-27-2014 Double Results] (http://spikegpu.sbel.org/nightly_build/2014_1_27_3Dpartial_results.html)
 
 
