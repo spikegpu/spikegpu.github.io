@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[4-20-2014 ILUULT vs ILUT Sweep Results] (http://spikegpu.sbel.org/nightly_build/2014_4_20_double_results_cpu_threshold_sweep.html)
+
+
 [4-17-2014 CPU Threshold Sweep Results] (http://spikegpu.sbel.org/nightly_build/2014_4_17_double_results_cpu_threshold_sweep.html)
 
 
