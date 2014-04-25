@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[4-25-2014 Banded Results] (http://spikegpu.sbel.org/nightly_build/2014_4_25_HSL_MC64.html)
+
+
 [4-24-2014 Banded Results] (http://spikegpu.sbel.org/nightly_build/2014_4_24_HSL_MC64.html)
 
 
