@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[4-25-2014 CPU Threshold Sweep Results] (http://spikegpu.sbel.org/nightly_build/2014_4_25_double_results_hsl_mc64.html)
+
+
 [4-25-2014 our Test MC64 Results] (http://spikegpu.sbel.org/nightly_build/2014_4_25_OUR_MC64.html)
 
 
