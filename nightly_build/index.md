@@ -6,7 +6,7 @@ title: Nightly
 ### Nightly
 
 
-[4-29-2014 our Test MC64 Results] (http://spikegpu.sbel.org/nightly_build/2014_4_29_our_MC64.html)
+[4-29-2014 our MC64 Results] (http://spikegpu.sbel.org/nightly_build/2014_4_29_our_MC64.html)
 
 
 [4-28-2014 CUSP RCM test] (http://spikegpu.sbel.org/nightly_build/2014_4_28_double_results_cusp_rcm.html)
