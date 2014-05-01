@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[5-1-2014 our GPU MC64 Results Continued ] (http://spikegpu.sbel.org/nightly_build/2014_5_1_our_MC64_cont.html)
+
+
 [5-1-2014 our MC64 Results with Stage Three on GPU] (http://spikegpu.sbel.org/nightly_build/2014_5_1_our_MC64.html)
 
 
