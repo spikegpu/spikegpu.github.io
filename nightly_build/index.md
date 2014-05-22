@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[5-22-2014 Double Results - New Assembly Kernel] (http://spikegpu.sbel.org/nightly_build/2014_5_22_double_results_newCalSpike.html)
+
+
 [5-21-2014 Double Results - Old Assembly Kernel] (http://spikegpu.sbel.org/nightly_build/2014_5_21_double_results_oldCalSpike.html)
 
 
