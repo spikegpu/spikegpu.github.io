@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[5-24-2014 CUDA 6.0 MC64 Results ] (http://spikegpu.sbel.org/nightly_build/2014_5_24_cuda6_MC64.html)
+
+
 [5-22-2014 Double Results - New Assembly Kernel] (http://spikegpu.sbel.org/nightly_build/2014_5_22_double_results_newCalSpike.html)
 
 
