@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[6-6-2014 CUDA 6.0 MC64 Results (no Unified Memory) ] (http://spikegpu.sbel.org/nightly_build/2014_6_6_cuda55_MC64.html)
+
+
 [6-6-2014 CUDA 6.0 MC64 Results ] (http://spikegpu.sbel.org/nightly_build/2014_6_6_cuda6_MC64.html)
 
 
