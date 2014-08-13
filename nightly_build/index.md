@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[8-12-2014 CUDA 6.0 RCM CPU Results ](http://spikegpu.sbel.org/nightly_build/2014_8_12_cuda6_RCM_CPU.html)
+
+
 [8-11-2014 CUDA 6.0 RCM CPU Results ](http://spikegpu.sbel.org/nightly_build/2014_8_11_cuda6_RCM_CPU.html)
 
 
