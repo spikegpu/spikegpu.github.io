@@ -6,7 +6,7 @@ title: Nightly
 ### Nightly
 
 
-[8-16-2014 Double Results - New Assembly Kernel] (http://spikegpu.sbel.org/nightly_build/2014_8_16_double_results_newCalSpike.html)
+[8-16-2014 Double Results - New Assembly Kernel](http://spikegpu.sbel.org/nightly_build/2014_8_16_double_results_newCalSpike.html)
 
 
 [8-12-2014 CUDA 6.0 RCM CPU Results ](http://spikegpu.sbel.org/nightly_build/2014_8_12_cuda6_RCM_CPU.html)
