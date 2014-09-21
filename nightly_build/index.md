@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[9-20-2014 Double Results](http://spikegpu.sbel.org/nightly_build/2014_9_20_double_results_newCalSpike.html)
+
+
 [9-11-2014 CUDA 6.0 RCM Results ](http://spikegpu.sbel.org/nightly_build/2014_9_11_cuda6_RCM3.html)
 
 
