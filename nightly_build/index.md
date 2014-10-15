@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[10-13-2014 RCM Sloan Comparison Results](http://spikegpu.sbel.org/nightly_build/2014_10_13_double_results_rcmSloanCompare.html)
+
+
 [10-12-2014 Double Results](http://spikegpu.sbel.org/nightly_build/2014_10_12_double_results_LuNNZTest.html)
 
 
