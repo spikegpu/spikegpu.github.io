@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[10-31-2014 cuSolver Results ](http://spikegpu.sbel.org/nightly_build/2014_10_31_cusolver.html)
+
+
 [10-25-2014 Double Results](http://spikegpu.sbel.org/nightly_build/2014_10_25_double_results_LuNNZTest.html)
 
 
