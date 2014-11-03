@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[11-3-2014 cuSolver Symmetric RCM Results ](http://spikegpu.sbel.org/nightly_build/2014_11_3_cusolver_rcm.html)
+
+
 [10-31-2014 cuSolver Results ](http://spikegpu.sbel.org/nightly_build/2014_10_31_cusolver.html)
 
 
