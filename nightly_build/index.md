@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[11-10-2014 Paralution CG with ILU Results](http://spikegpu.sbel.org/nightly_build/2014_11_10_paralution_cg_ilu.html)
+
+
 [11-5-2014 RCM on Jetson TK1 Results](http://spikegpu.sbel.org/nightly_build/2014_11_5_rcm_jetson_results.html)
 
 
