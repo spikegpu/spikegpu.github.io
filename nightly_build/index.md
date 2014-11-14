@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[11-13-2014 Paralution CG with multi-colored ILU(1,2) Results](http://spikegpu.sbel.org/nightly_build/2014_11_13_paralution_cg_ilu.html)
+
+
 [11-10-2014 Paralution CG with AMG Results](http://spikegpu.sbel.org/nightly_build/2014_11_10_paralution_cg_amg.html)
 
 
