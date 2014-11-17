@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[11-17-2014 Double Results](http://spikegpu.sbel.org/nightly_build/2014_11_17_double_results_LuNNZTest.html)
+
+
 [11-13-2014 Paralution CG with multi-colored ILU(1,2) Results](http://spikegpu.sbel.org/nightly_build/2014_11_13_paralution_cg_ilu.html)
 
 
