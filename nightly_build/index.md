@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[12-23-2014 Double Results](http://spikegpu.sbel.org/nightly_build/2014_12_23_double_results_LuNNZTest.html)
+
+
 [12-04-2014 SPIKE v.s. Pardiso v.s. SuperLU](http://spikegpu.sbel.org/nightly_build/SpikePardisoSuperLU.html)
 
 
