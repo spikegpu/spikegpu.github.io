@@ -150,6 +150,8 @@ text-align: center;
 
 &bull; K: the half-bandwidth after reordering and drop-off <br>
 
+&bull; FRate: fill-in rate. See NOTES below <br>
+
 &bull; nuKf: non-uniform K factor. Indicates whether the K changes a lot from row to row. Values are between 0 and 1, with 0 indicating a perfectly uniform bandwidth over the entire matrix. See NOTES below <br>
 
 &bull; Solves: indicates whether we managed to solve the problem or not. OK means solved fine, otherwise a reason is provided for failure <br>
@@ -210,7 +212,9 @@ NOTES: <br>
 
 1)	nuKf = 1/(2KN)*[sum over i from 1 to N of (2K - K_{iLeft} - K_{iRight})], where K_{iLeft} is the row half-bandwidth to the left of the diagonal while K_{iRight} is the row half-bandwidth to the right of the diagonal. <br>
 
-2)	All times reported are in miliseconds (1E-3 second) <br>
+2)	FRate = the actual number of NNZ / ((2K+1)N). <br>
+
+3)	All times reported are in miliseconds (1E-3 second) <br>
 
 </p>
 
