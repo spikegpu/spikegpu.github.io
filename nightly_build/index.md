@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[4-15-2015 Double Results with Hybrid SPMV](http://spikegpu.sbel.org/nightly_build/2015_4_15_double_results_HybSPMV.html)
+
+
 [2-27-2015 Double Results with Hybrid SPMV](http://spikegpu.sbel.org/nightly_build/2015_2_27_double_results_HybSPMV.html)
 
 
