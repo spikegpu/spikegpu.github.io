@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[4-17-2015 Synthetic Banded Test: Sweeping on Number of Partitions](http://spikegpu.sbel.org/nightly_build/PSweep.html)
+
+
 [4-16-2015 Double Results with Hybrid SPMV](http://spikegpu.sbel.org/nightly_build/2015_4_16_double_results_HybSPMV_partial.html)
 
 
