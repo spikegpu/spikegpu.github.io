@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[4-19-2015 Synthetic Banded Test: BBD and SPIKE](http://spikegpu.sbel.org/nightly_build/2015_04_19_spike_bbd_dense.html)
+
+
 [4-17-2015 Synthetic Banded Test: Sweeping on Number of Partitions](http://spikegpu.sbel.org/nightly_build/PSweep.html)
 
 
