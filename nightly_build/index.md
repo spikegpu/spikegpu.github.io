@@ -6,6 +6,12 @@ title: Nightly
 ### Nightly
 
 
+[4-20-2015 Double Results with second-stage reordering](http://spikegpu.sbel.org/nightly_build/2015_4_20_double_results_ssreordering.html)
+
+
+[4-20-2015 Double Results without second-stage reordering](http://spikegpu.sbel.org/nightly_build/2015_4_20_double_results_no_ssreordering.html)
+
+
 [4-19-2015 Synthetic Banded Test: BBD and SPIKE](http://spikegpu.sbel.org/nightly_build/2015_04_19_spike_bbd_dense.html)
 
 
