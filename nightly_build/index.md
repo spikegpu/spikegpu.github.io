@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[4-25-2015 Dense Banded 2D Sweep](http://spikegpu.sbel.org/nightly_build/2015_4_25_2Dsweep.html)
+
+
 [4-20-2015 Double Results Sweep](http://spikegpu.sbel.org/nightly_build/2015_4_20_double_results_sweep.html)
 
 
