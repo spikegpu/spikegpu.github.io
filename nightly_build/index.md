@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[4-29-2015 Double Results New](http://spikegpu.sbel.org/nightly_build/2015_4_29_double_results_new.html)
+
+
 [4-29-2015 Double Results Sweep](http://spikegpu.sbel.org/nightly_build/2015_4_29_double_results_sweep.html)
 
 
