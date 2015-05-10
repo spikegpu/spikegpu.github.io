@@ -1,17 +1,17 @@
 ---
 layout: default
-title: SPIKE GPU
+title: SaP GPU
 ---
 
-### SPIKE GPU
+### SaP GPU
 <h4> An Implementation of a Recursive Divide-and-Conquer Parallel Strategy for Solving Large Systems of Linear Equations</h4>
 
 **Goal:** This project proposes to investigate, produce, and maintain a methodology and its software
 implementation that leverage emerging heterogeneous hardware architectures to solve billion-unknowns
 linear systems in a robust, scalable, and efficient fashion. The two classes of problems targeted under this
 project are banded dense and sparse general linear systems. Preliminary results suggest that the adopted
-methodology displays a good strong-scaling attribute and its early implementation, called SPIKE, is one
-order of magnitude faster than competitive software solutions.
+methodology displays a good strong-scaling attribute and its early implementation, called SaP (for Splitting-and-Partitioning),
+is one order of magnitude faster than competitive software solutions.
 
 **Motivation:** The task of solving a linear system is one of the most ubiquitous ingredients in the
 numerical solution of Applied Mathematics problems. It is relied upon for the implicit integration of
