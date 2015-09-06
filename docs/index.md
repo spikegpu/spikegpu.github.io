@@ -3,20 +3,20 @@ layout: default
 title: Documentation
 ---
 
-**Spike API** [doxygen](http://spikegpu.sbel.org/docs/html/index.html)
+**SaP API** [doxygen](http://sapgpu.sbel.org/docs/html/index.html)
 
 **Building examples**
 
-The [SpikeLibrary](https://github.com/spikegpu/SpikeLibrary) uses CMake to build the example executables found under `examples`. You must have a recent version of [CMake](http://www.cmake.org/) and [Nvidia's CUDA](http://www.nvidia.com/cuda) installed in order to build.
+The [SaPLibrary](https://github.com/spikegpu/SaPLibrary) uses CMake to build the example executables found under `examples`. You must have a recent version of [CMake](http://www.cmake.org/) and [Nvidia's CUDA](http://www.nvidia.com/cuda) installed in order to build.
 
 First, grab the source code from the Git repositories:
-<pre>git clone git@github.com:spikegpu/SpikeLibrary.git</pre>
+<pre>git clone git@github.com:spikegpu/SaPLibrary.git</pre>
 
 <br />
 
 Next, create a build directory and cd into it:
-<pre>mkdir SpikeLibrary/build
-cd SpikeLibrary/build</pre>
+<pre>mkdir SaPLibrary/build
+cd SaPLibrary/build</pre>
 
 <br />
 
