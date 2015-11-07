@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[11-7-2015 Double Results Krylov Profile](http://sapgpu.sbel.org/nightly_build/2015_11_7_double_results_multi_gpu_krylov_profile.html)
+
+
 [11-6-2015 Double Results Krylov Profile](http://sapgpu.sbel.org/nightly_build/2015_11_6_double_results_multi_gpu_krylov_profile.html)
 
 
