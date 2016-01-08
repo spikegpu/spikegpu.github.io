@@ -166,7 +166,9 @@ text-align: center;
 
 &bull; T-Kry: time spent in the Krylov solver (on the GPU) <br>
 
-&bull; Total: total time to solve the problem, sum of PreProc + T-Kry  <br>
+&bull; T-KryPIt: time per Krylov iteration, see NOTES <br>
+
+&bull; Total: total time to solve the problem, sum of T-PreP + T-Kry  <br>
 
 </p>
 
@@ -175,6 +177,8 @@ text-align: center;
 NOTES: <br>
 
 1)	All times reported are in miliseconds (1E-3 second) <br>
+
+2)	T-KryPIt = T-Kry / max(1, nItrs) <br>
 
 </p>
 
@@ -223,6 +227,12 @@ NOTES: <br>
 <td style="border-style: inset;">
 
 <p><span class=rvts1>NPrtns</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>UseBCR</span></p>
 
 </td>
 
@@ -277,6 +287,12 @@ NOTES: <br>
 <td style="border-style: inset;">
 
 <p><span class=rvts1>T-Kry</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-KryPIt</span></p>
 
 </td>
 
