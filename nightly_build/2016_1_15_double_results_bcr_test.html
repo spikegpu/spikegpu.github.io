@@ -1,0 +1,4276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html><head><title></title>
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<style type="text/css"><!--
+
+body {
+
+margin: 5px 5px 5px 5px;
+
+background-color: #ffffff;
+
+}
+
+/* ========== Text Styles ========== */
+
+hr { color: #000000}
+
+body, table /* Normal text */
+
+{
+
+font-size: 10pt;
+
+font-family: 'Courier New';
+
+font-style: normal;
+
+font-weight: normal;
+
+color: #000000;
+
+text-decoration: none;
+
+}
+
+span.rvts1 /* Heading */
+
+{
+
+font-family: 'Arial';
+
+font-weight: bold;
+
+color: #0000ff;
+
+}
+
+span.rvts2 /* Subheading */
+
+{
+
+font-family: 'Arial';
+
+font-weight: bold;
+
+color: #000080;
+
+}
+
+span.rvts3 /* Keywords */
+
+{
+
+font-family: 'Arial';
+
+font-style: italic;
+
+color: #800000;
+
+}
+
+a.rvts4, span.rvts4 /* Jump 1 */
+
+{
+
+color: #008000;
+
+text-decoration: underline;
+
+}
+
+a.rvts5, span.rvts5 /* Jump 2 */
+
+{
+
+font-family: 'Arial';
+
+color: #008000;
+
+text-decoration: underline;
+
+}
+
+/* ========== Para Styles ========== */
+
+p,ul,ol /* Paragraph Style */
+
+{
+
+text-align: left;
+
+text-indent: 0px;
+
+padding: 0px 0px 0px 0px;
+
+margin: 0px 0px 0px 0px;
+
+}
+
+.rvps1 /* Centered */
+
+{
+
+text-align: center;
+
+}
+
+--></style>
+
+</head>
+
+<body>
+
+
+
+<p><br></p>
+
+<h1> 1-15-2016 Banded Results BCR Test</h1>
+
+<p><br></p>
+
+<p> <br>
+
+&bull; Name: the name of the matrix (test) <br>
+
+&bull; N: the dimension of the matrix (number of rows and columns) <br>
+
+&bull; NNZ: number of non-zeros <br>
+
+&bull; SPD: whether the matrix is specified by the user to be symmetric positive definite (values: 0 or 1) <br>
+
+&bull; DB: indicate whether DB reordering is performed. Values: 0 or 1. <br>
+
+&bull; K-DB: the half-bandwidth after DB reordering method (without any drop-off). If DB is specified not to be executed, then this reports the original half-bandwidth  <br>
+
+&bull; KnoDrp: the half-bandwidth after DB and CM reordering but before drop-off <br>
+
+&bull; K: the half-bandwidth after reordering and drop-off <br>
+
+&bull; FRate: fill-in rate. See NOTES below <br>
+
+&bull; nuKf: non-uniform K factor. Indicates whether the K changes a lot from row to row. Values are between 0 and 1, with 0 indicating a perfectly uniform bandwidth over the entire matrix. See NOTES below <br>
+
+&bull; Solves: indicates whether we managed to solve the problem or not. OK means solved fine, otherwise a reason is provided for failure <br>
+
+&bull; Bstng: indicates whether we enable diagonal boosting when doing factorization. Values: 0 or 1 <br>
+
+&bull; SolAcc: infinity norm of the array storing the relative errors  <br>
+
+&bull; T-DB: time to run DB reordering for the matrix on the CPU <br>
+
+&bull; T-CM: time to run CM reordering for the matrix on the CPU <br>
+
+&bull; T-Drop: time to drop off off-diagonal elements to decrease bandwidth. Done on the CPU. <br>
+
+&bull; T-Dtransf: data transfer from CPU to GPU <br>
+
+&bull; T-Asmbl: after reordering and drop-off, copy the sparse matrix to banded matrix stored in GPU memory <br>
+
+&bull; LU-M: LU method (complete, ILUT or ILUULT)<br>
+
+&bull; Fill-in: the fill-in factor of ILUT (-1 indicates complete LU)<br>
+
+&bull; NPrtns: the number of partitions used to solve the problem <br>
+
+&bull; T-BC: time required to get off-diagonal right hand sides (Bs and Cs) from the banded matrix - done on the GPU <br>
+
+&bull; T-LU: LU time <br>
+
+&bull; GFlps-LU: LU GFLOPs <br>
+
+&bull; T-SPK: time to solve for the spikes Vs and Ws - done on the GPU <br>
+
+&bull; T-LUrdcd: time required to factorize the reduced matrices - done on the GPU <br>
+
+&bull; T-PreP: the sum of all preprocessing times, see NOTES <br>
+
+&bull; Kry-M: the method used in Krylov solving stage (can be BiCGStab2 (0), BiCGStab (1), or CG(2)) <br>
+
+&bull; nItrs: the number of Krylov-solve iterations to solve the problem <br>
+
+&bull; T-Kry: time spent in the Krylov solver (on the GPU) <br>
+
+&bull; Total: total time to solve the problem, sum of PreProc + T-Kry  <br>
+
+&bull; Pardiso: the time for the commercial tool "Pardiso" to solve the problem <br>
+
+&bull; SlwD: the slowdown ratio of our solver compared to Pardiso (a value less than one means that we are faster than Pardiso. The value is shown in green if we run faster and shown in red if we run more than 5 times slower.) <br>
+
+&bull; Fastest: the time when SaP runs fastest historically <br>
+
+&bull; SpdUp: the speedup of this run compared to the historical fastest run (the value is shown in green if the speedup is more than 5% and shown in red if the slowdown is more than 5%) <br>
+
+</p>
+
+<p> <br>
+
+NOTES: <br>
+
+1)	nuKf = 1/(2KN)*[sum over i from 1 to N of (2K - K_{iLeft} - K_{iRight})], where K_{iLeft} is the row half-bandwidth to the left of the diagonal while K_{iRight} is the row half-bandwidth to the right of the diagonal. <br>
+
+2)	FRate = the actual number of NNZ / ((2K+1)N). <br>
+
+3)	All times reported are in miliseconds (1E-3 second) <br>
+
+</p>
+
+<p> <br> </p>
+
+<div><table width="100%" border=1 cellpadding=1 cellspacing=2 style="background-color: #ffffff;">
+
+<tr valign=top>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>N</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>K</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>d</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>NPrtns</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>Solves</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-BC</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-LU</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-SwDef</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-MMDef</span></p>
+
+</td>
+
+<p><span class=rvts1>T-PreP</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>nItrs</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-SwInf</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-MVInf</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-Kry</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-KryPIt</span></p>
+
+</td>
+
+<td style="border-style: inset;">
+
+<p><span class=rvts1>T-Total</span></p>
+
+</td>
+
+</tr>
+
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 24.2722 </p>
+</td>
+<td style="border-style: inset;">
+<p> 12.2619 </p>
+</td>
+<td style="border-style: inset;">
+<p> 35.2257 </p>
+</td>
+<td style="border-style: inset;">
+<p> 81.723 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10.8961 </p>
+</td>
+<td style="border-style: inset;">
+<p> 30.2726 </p>
+</td>
+<td style="border-style: inset;">
+<p> 53.886 </p>
+</td>
+<td style="border-style: inset;">
+<p> 53.886 </p>
+</td>
+<td style="border-style: inset;">
+<p> 135.609 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 264.775 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 268.8 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1205.52 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1205.52 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1474.32 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 18.8382 </p>
+</td>
+<td style="border-style: inset;">
+<p> 11.9788 </p>
+</td>
+<td style="border-style: inset;">
+<p> 33.528 </p>
+</td>
+<td style="border-style: inset;">
+<p> 74.094 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 27.2124 </p>
+</td>
+<td style="border-style: inset;">
+<p> 77.2414 </p>
+</td>
+<td style="border-style: inset;">
+<p> 131.907 </p>
+</td>
+<td style="border-style: inset;">
+<p> 47.9662 </p>
+</td>
+<td style="border-style: inset;">
+<p> 206.001 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 66.601 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 70.712 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1153.44 </p>
+</td>
+<td style="border-style: inset;">
+<p> 419.432 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1224.15 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 18.0295 </p>
+</td>
+<td style="border-style: inset;">
+<p> 11.8463 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32.9357 </p>
+</td>
+<td style="border-style: inset;">
+<p> 72.549 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 26.7645 </p>
+</td>
+<td style="border-style: inset;">
+<p> 76.7795 </p>
+</td>
+<td style="border-style: inset;">
+<p> 130.747 </p>
+</td>
+<td style="border-style: inset;">
+<p> 47.5444 </p>
+</td>
+<td style="border-style: inset;">
+<p> 203.296 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 33.5965 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 37.748 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 592.549 </p>
+</td>
+<td style="border-style: inset;">
+<p> 215.472 </p>
+</td>
+<td style="border-style: inset;">
+<p> 630.297 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 17.2945 </p>
+</td>
+<td style="border-style: inset;">
+<p> 11.7184 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32.5456 </p>
+</td>
+<td style="border-style: inset;">
+<p> 71.26 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 26.2944 </p>
+</td>
+<td style="border-style: inset;">
+<p> 76.3672 </p>
+</td>
+<td style="border-style: inset;">
+<p> 129.37 </p>
+</td>
+<td style="border-style: inset;">
+<p> 47.0436 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200.63 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 17.1801 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 21.337 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 311.866 </p>
+</td>
+<td style="border-style: inset;">
+<p> 113.406 </p>
+</td>
+<td style="border-style: inset;">
+<p> 333.203 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 16.5977 </p>
+</td>
+<td style="border-style: inset;">
+<p> 11.6324 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32.0151 </p>
+</td>
+<td style="border-style: inset;">
+<p> 69.967 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 29.8016 </p>
+</td>
+<td style="border-style: inset;">
+<p> 87.5231 </p>
+</td>
+<td style="border-style: inset;">
+<p> 147.046 </p>
+</td>
+<td style="border-style: inset;">
+<p> 45.2449 </p>
+</td>
+<td style="border-style: inset;">
+<p> 217.013 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 13.9148 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 18.05 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3.25 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 293.888 </p>
+</td>
+<td style="border-style: inset;">
+<p> 90.4271 </p>
+</td>
+<td style="border-style: inset;">
+<p> 311.938 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 16.7773 </p>
+</td>
+<td style="border-style: inset;">
+<p> 11.7055 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32.1499 </p>
+</td>
+<td style="border-style: inset;">
+<p> 70.402 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 34.2112 </p>
+</td>
+<td style="border-style: inset;">
+<p> 101.011 </p>
+</td>
+<td style="border-style: inset;">
+<p> 168.636 </p>
+</td>
+<td style="border-style: inset;">
+<p> 51.888 </p>
+</td>
+<td style="border-style: inset;">
+<p> 239.038 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 9.04627 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 13.234 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3.25 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 221.763 </p>
+</td>
+<td style="border-style: inset;">
+<p> 68.2348 </p>
+</td>
+<td style="border-style: inset;">
+<p> 234.997 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 15.939 </p>
+</td>
+<td style="border-style: inset;">
+<p> 11.4975 </p>
+</td>
+<td style="border-style: inset;">
+<p> 31.6312 </p>
+</td>
+<td style="border-style: inset;">
+<p> 68.797 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 33.3065 </p>
+</td>
+<td style="border-style: inset;">
+<p> 99.0771 </p>
+</td>
+<td style="border-style: inset;">
+<p> 165.106 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50.8018 </p>
+</td>
+<td style="border-style: inset;">
+<p> 233.903 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 6.09686 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 10.262 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3.25 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 155.438 </p>
+</td>
+<td style="border-style: inset;">
+<p> 47.8271 </p>
+</td>
+<td style="border-style: inset;">
+<p> 165.7 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 28.64 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20.7508 </p>
+</td>
+<td style="border-style: inset;">
+<p> 42.0272 </p>
+</td>
+<td style="border-style: inset;">
+<p> 102.011 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 10.7706 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32.3022 </p>
+</td>
+<td style="border-style: inset;">
+<p> 57.644 </p>
+</td>
+<td style="border-style: inset;">
+<p> 57.644 </p>
+</td>
+<td style="border-style: inset;">
+<p> 159.655 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 286.453 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 292.819 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1268.93 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1268.93 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1561.75 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 27.2449 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20.3164 </p>
+</td>
+<td style="border-style: inset;">
+<p> 41.4469 </p>
+</td>
+<td style="border-style: inset;">
+<p> 99.544 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 27.0089 </p>
+</td>
+<td style="border-style: inset;">
+<p> 84.0392 </p>
+</td>
+<td style="border-style: inset;">
+<p> 144.565 </p>
+</td>
+<td style="border-style: inset;">
+<p> 52.5691 </p>
+</td>
+<td style="border-style: inset;">
+<p> 244.109 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 72.5107 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 78.974 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1208.3 </p>
+</td>
+<td style="border-style: inset;">
+<p> 439.381 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1287.27 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 31.7517 </p>
+</td>
+<td style="border-style: inset;">
+<p> 19.8612 </p>
+</td>
+<td style="border-style: inset;">
+<p> 54.6888 </p>
+</td>
+<td style="border-style: inset;">
+<p> 116.925 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 26.4718 </p>
+</td>
+<td style="border-style: inset;">
+<p> 83.2888 </p>
+</td>
+<td style="border-style: inset;">
+<p> 145.248 </p>
+</td>
+<td style="border-style: inset;">
+<p> 52.8175 </p>
+</td>
+<td style="border-style: inset;">
+<p> 262.173 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 36.9869 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 43.465 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 628.782 </p>
+</td>
+<td style="border-style: inset;">
+<p> 228.648 </p>
+</td>
+<td style="border-style: inset;">
+<p> 672.247 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 25.5395 </p>
+</td>
+<td style="border-style: inset;">
+<p> 19.3963 </p>
+</td>
+<td style="border-style: inset;">
+<p> 40.1342 </p>
+</td>
+<td style="border-style: inset;">
+<p> 95.461 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 25.453 </p>
+</td>
+<td style="border-style: inset;">
+<p> 82.2768 </p>
+</td>
+<td style="border-style: inset;">
+<p> 140.182 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50.9753 </p>
+</td>
+<td style="border-style: inset;">
+<p> 235.643 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 19.88 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 26.381 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 330.277 </p>
+</td>
+<td style="border-style: inset;">
+<p> 120.101 </p>
+</td>
+<td style="border-style: inset;">
+<p> 356.658 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 24.7589 </p>
+</td>
+<td style="border-style: inset;">
+<p> 19.2002 </p>
+</td>
+<td style="border-style: inset;">
+<p> 39.7151 </p>
+</td>
+<td style="border-style: inset;">
+<p> 94.08 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 24.7431 </p>
+</td>
+<td style="border-style: inset;">
+<p> 81.4173 </p>
+</td>
+<td style="border-style: inset;">
+<p> 138.318 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50.2975 </p>
+</td>
+<td style="border-style: inset;">
+<p> 232.398 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 16.181 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 22.694 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 271.816 </p>
+</td>
+<td style="border-style: inset;">
+<p> 98.8422 </p>
+</td>
+<td style="border-style: inset;">
+<p> 294.51 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 24.8478 </p>
+</td>
+<td style="border-style: inset;">
+<p> 19.0348 </p>
+</td>
+<td style="border-style: inset;">
+<p> 39.3229 </p>
+</td>
+<td style="border-style: inset;">
+<p> 93.643 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 24.8875 </p>
+</td>
+<td style="border-style: inset;">
+<p> 81.8479 </p>
+</td>
+<td style="border-style: inset;">
+<p> 138.9 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50.5091 </p>
+</td>
+<td style="border-style: inset;">
+<p> 232.543 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 11.4103 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 17.913 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 184.044 </p>
+</td>
+<td style="border-style: inset;">
+<p> 66.9251 </p>
+</td>
+<td style="border-style: inset;">
+<p> 201.957 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 24.0469 </p>
+</td>
+<td style="border-style: inset;">
+<p> 18.8314 </p>
+</td>
+<td style="border-style: inset;">
+<p> 34.2111 </p>
+</td>
+<td style="border-style: inset;">
+<p> 87.531 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 24.1588 </p>
+</td>
+<td style="border-style: inset;">
+<p> 81.5282 </p>
+</td>
+<td style="border-style: inset;">
+<p> 137.662 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50.0589 </p>
+</td>
+<td style="border-style: inset;">
+<p> 225.193 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 8.4024 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 14.921 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 131.524 </p>
+</td>
+<td style="border-style: inset;">
+<p> 47.8269 </p>
+</td>
+<td style="border-style: inset;">
+<p> 146.445 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 58.5501 </p>
+</td>
+<td style="border-style: inset;">
+<p> 41.2044 </p>
+</td>
+<td style="border-style: inset;">
+<p> 73.1241 </p>
+</td>
+<td style="border-style: inset;">
+<p> 190.818 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 13.4309 </p>
+</td>
+<td style="border-style: inset;">
+<p> 33.1776 </p>
+</td>
+<td style="border-style: inset;">
+<p> 64.084 </p>
+</td>
+<td style="border-style: inset;">
+<p> 64.084 </p>
+</td>
+<td style="border-style: inset;">
+<p> 254.902 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1024.78 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1037.84 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1440.87 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1440.87 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2478.7 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 56.6425 </p>
+</td>
+<td style="border-style: inset;">
+<p> 39.1851 </p>
+</td>
+<td style="border-style: inset;">
+<p> 72.1564 </p>
+</td>
+<td style="border-style: inset;">
+<p> 185.844 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 27.4019 </p>
+</td>
+<td style="border-style: inset;">
+<p> 71.8859 </p>
+</td>
+<td style="border-style: inset;">
+<p> 133.526 </p>
+</td>
+<td style="border-style: inset;">
+<p> 59.3449 </p>
+</td>
+<td style="border-style: inset;">
+<p> 319.37 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 258.937 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 272.373 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1119.13 </p>
+</td>
+<td style="border-style: inset;">
+<p> 497.391 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1391.5 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 55.2116 </p>
+</td>
+<td style="border-style: inset;">
+<p> 38.029 </p>
+</td>
+<td style="border-style: inset;">
+<p> 70.1837 </p>
+</td>
+<td style="border-style: inset;">
+<p> 181.203 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 26.0852 </p>
+</td>
+<td style="border-style: inset;">
+<p> 70.4036 </p>
+</td>
+<td style="border-style: inset;">
+<p> 130.3 </p>
+</td>
+<td style="border-style: inset;">
+<p> 57.9111 </p>
+</td>
+<td style="border-style: inset;">
+<p> 311.503 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 132.477 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 145.998 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 585.476 </p>
+</td>
+<td style="border-style: inset;">
+<p> 260.212 </p>
+</td>
+<td style="border-style: inset;">
+<p> 731.474 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 54.2485 </p>
+</td>
+<td style="border-style: inset;">
+<p> 36.6621 </p>
+</td>
+<td style="border-style: inset;">
+<p> 63.5333 </p>
+</td>
+<td style="border-style: inset;">
+<p> 172.157 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 25.0069 </p>
+</td>
+<td style="border-style: inset;">
+<p> 69.7163 </p>
+</td>
+<td style="border-style: inset;">
+<p> 128.494 </p>
+</td>
+<td style="border-style: inset;">
+<p> 57.1084 </p>
+</td>
+<td style="border-style: inset;">
+<p> 300.651 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 77.7881 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 91.29 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 308.399 </p>
+</td>
+<td style="border-style: inset;">
+<p> 137.066 </p>
+</td>
+<td style="border-style: inset;">
+<p> 399.689 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 54.5423 </p>
+</td>
+<td style="border-style: inset;">
+<p> 36.8539 </p>
+</td>
+<td style="border-style: inset;">
+<p> 63.7975 </p>
+</td>
+<td style="border-style: inset;">
+<p> 172.969 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 29.5867 </p>
+</td>
+<td style="border-style: inset;">
+<p> 82.9023 </p>
+</td>
+<td style="border-style: inset;">
+<p> 151.567 </p>
+</td>
+<td style="border-style: inset;">
+<p> 67.3631 </p>
+</td>
+<td style="border-style: inset;">
+<p> 324.536 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 62.6587 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 76.139 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 299.377 </p>
+</td>
+<td style="border-style: inset;">
+<p> 133.056 </p>
+</td>
+<td style="border-style: inset;">
+<p> 375.516 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 53.3693 </p>
+</td>
+<td style="border-style: inset;">
+<p> 35.2102 </p>
+</td>
+<td style="border-style: inset;">
+<p> 60.6568 </p>
+</td>
+<td style="border-style: inset;">
+<p> 167.001 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 28.3475 </p>
+</td>
+<td style="border-style: inset;">
+<p> 81.314 </p>
+</td>
+<td style="border-style: inset;">
+<p> 148.275 </p>
+</td>
+<td style="border-style: inset;">
+<p> 65.9 </p>
+</td>
+<td style="border-style: inset;">
+<p> 315.276 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 46.4562 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 59.926 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 204.501 </p>
+</td>
+<td style="border-style: inset;">
+<p> 90.8893 </p>
+</td>
+<td style="border-style: inset;">
+<p> 264.427 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 54.1348 </p>
+</td>
+<td style="border-style: inset;">
+<p> 34.8616 </p>
+</td>
+<td style="border-style: inset;">
+<p> 61.2659 </p>
+</td>
+<td style="border-style: inset;">
+<p> 168.02 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 23.9793 </p>
+</td>
+<td style="border-style: inset;">
+<p> 69.3905 </p>
+</td>
+<td style="border-style: inset;">
+<p> 126.905 </p>
+</td>
+<td style="border-style: inset;">
+<p> 56.4022 </p>
+</td>
+<td style="border-style: inset;">
+<p> 294.925 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 36.1767 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 49.661 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 125.378 </p>
+</td>
+<td style="border-style: inset;">
+<p> 55.7236 </p>
+</td>
+<td style="border-style: inset;">
+<p> 175.039 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 112.759 </p>
+</td>
+<td style="border-style: inset;">
+<p> 153.542 </p>
+</td>
+<td style="border-style: inset;">
+<p> 144.315 </p>
+</td>
+<td style="border-style: inset;">
+<p> 443.324 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 17.7376 </p>
+</td>
+<td style="border-style: inset;">
+<p> 38.1031 </p>
+</td>
+<td style="border-style: inset;">
+<p> 79.407 </p>
+</td>
+<td style="border-style: inset;">
+<p> 79.407 </p>
+</td>
+<td style="border-style: inset;">
+<p> 522.731 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 928.477 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 952.584 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1468.24 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1468.24 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2420.83 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 107.101 </p>
+</td>
+<td style="border-style: inset;">
+<p> 144.532 </p>
+</td>
+<td style="border-style: inset;">
+<p> 141.485 </p>
+</td>
+<td style="border-style: inset;">
+<p> 425.821 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 28.5805 </p>
+</td>
+<td style="border-style: inset;">
+<p> 67.1234 </p>
+</td>
+<td style="border-style: inset;">
+<p> 135.541 </p>
+</td>
+<td style="border-style: inset;">
+<p> 77.452 </p>
+</td>
+<td style="border-style: inset;">
+<p> 561.362 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 383.256 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 407.622 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 937.645 </p>
+</td>
+<td style="border-style: inset;">
+<p> 535.797 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1345.27 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 106.033 </p>
+</td>
+<td style="border-style: inset;">
+<p> 139.546 </p>
+</td>
+<td style="border-style: inset;">
+<p> 132.421 </p>
+</td>
+<td style="border-style: inset;">
+<p> 410.689 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 27.0303 </p>
+</td>
+<td style="border-style: inset;">
+<p> 66.3143 </p>
+</td>
+<td style="border-style: inset;">
+<p> 133.182 </p>
+</td>
+<td style="border-style: inset;">
+<p> 76.104 </p>
+</td>
+<td style="border-style: inset;">
+<p> 543.871 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 249.491 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 273.923 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 491.617 </p>
+</td>
+<td style="border-style: inset;">
+<p> 280.924 </p>
+</td>
+<td style="border-style: inset;">
+<p> 765.54 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 104.935 </p>
+</td>
+<td style="border-style: inset;">
+<p> 134.328 </p>
+</td>
+<td style="border-style: inset;">
+<p> 128.303 </p>
+</td>
+<td style="border-style: inset;">
+<p> 400.167 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 25.523 </p>
+</td>
+<td style="border-style: inset;">
+<p> 65.1988 </p>
+</td>
+<td style="border-style: inset;">
+<p> 130.266 </p>
+</td>
+<td style="border-style: inset;">
+<p> 74.4377 </p>
+</td>
+<td style="border-style: inset;">
+<p> 530.433 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 173.02 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 197.44 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 268.63 </p>
+</td>
+<td style="border-style: inset;">
+<p> 153.503 </p>
+</td>
+<td style="border-style: inset;">
+<p> 466.07 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 105.776 </p>
+</td>
+<td style="border-style: inset;">
+<p> 133.926 </p>
+</td>
+<td style="border-style: inset;">
+<p> 129.214 </p>
+</td>
+<td style="border-style: inset;">
+<p> 401.493 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 25.4246 </p>
+</td>
+<td style="border-style: inset;">
+<p> 65.7276 </p>
+</td>
+<td style="border-style: inset;">
+<p> 130.398 </p>
+</td>
+<td style="border-style: inset;">
+<p> 74.5131 </p>
+</td>
+<td style="border-style: inset;">
+<p> 531.891 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 161.856 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 186.356 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 224.156 </p>
+</td>
+<td style="border-style: inset;">
+<p> 128.089 </p>
+</td>
+<td style="border-style: inset;">
+<p> 410.512 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 104.898 </p>
+</td>
+<td style="border-style: inset;">
+<p> 94.4889 </p>
+</td>
+<td style="border-style: inset;">
+<p> 122.811 </p>
+</td>
+<td style="border-style: inset;">
+<p> 354.992 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 24.4107 </p>
+</td>
+<td style="border-style: inset;">
+<p> 63.6522 </p>
+</td>
+<td style="border-style: inset;">
+<p> 127.287 </p>
+</td>
+<td style="border-style: inset;">
+<p> 72.7354 </p>
+</td>
+<td style="border-style: inset;">
+<p> 482.279 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 141.385 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 165.832 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 157.089 </p>
+</td>
+<td style="border-style: inset;">
+<p> 89.7651 </p>
+</td>
+<td style="border-style: inset;">
+<p> 322.921 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 106.549 </p>
+</td>
+<td style="border-style: inset;">
+<p> 125.307 </p>
+</td>
+<td style="border-style: inset;">
+<p> 122.265 </p>
+</td>
+<td style="border-style: inset;">
+<p> 386.605 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 29.4026 </p>
+</td>
+<td style="border-style: inset;">
+<p> 78.2502 </p>
+</td>
+<td style="border-style: inset;">
+<p> 154.817 </p>
+</td>
+<td style="border-style: inset;">
+<p> 68.8076 </p>
+</td>
+<td style="border-style: inset;">
+<p> 541.422 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 100 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 132.617 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 157.248 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2.25 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 142.631 </p>
+</td>
+<td style="border-style: inset;">
+<p> 63.3916 </p>
+</td>
+<td style="border-style: inset;">
+<p> 299.879 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 314.652 </p>
+</td>
+<td style="border-style: inset;">
+<p> 416.578 </p>
+</td>
+<td style="border-style: inset;">
+<p> 369.325 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1193.87 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 28.0272 </p>
+</td>
+<td style="border-style: inset;">
+<p> 54.5544 </p>
+</td>
+<td style="border-style: inset;">
+<p> 120.426 </p>
+</td>
+<td style="border-style: inset;">
+<p> 120.426 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1314.29 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1189.51 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1236.79 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1513.09 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1513.09 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2749.87 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 311.066 </p>
+</td>
+<td style="border-style: inset;">
+<p> 388.115 </p>
+</td>
+<td style="border-style: inset;">
+<p> 349.471 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1141.81 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 44.1715 </p>
+</td>
+<td style="border-style: inset;">
+<p> 95.5205 </p>
+</td>
+<td style="border-style: inset;">
+<p> 205.312 </p>
+</td>
+<td style="border-style: inset;">
+<p> 117.321 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1347.12 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 587.562 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 635.026 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 981.52 </p>
+</td>
+<td style="border-style: inset;">
+<p> 560.869 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1616.55 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 309.716 </p>
+</td>
+<td style="border-style: inset;">
+<p> 371.777 </p>
+</td>
+<td style="border-style: inset;">
+<p> 338.377 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1112.61 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 41.4061 </p>
+</td>
+<td style="border-style: inset;">
+<p> 93.408 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200.077 </p>
+</td>
+<td style="border-style: inset;">
+<p> 114.33 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1312.69 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 438.894 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 486.534 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 526.237 </p>
+</td>
+<td style="border-style: inset;">
+<p> 300.707 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1012.77 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 319.598 </p>
+</td>
+<td style="border-style: inset;">
+<p> 234.582 </p>
+</td>
+<td style="border-style: inset;">
+<p> 333.455 </p>
+</td>
+<td style="border-style: inset;">
+<p> 981.541 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 39.5124 </p>
+</td>
+<td style="border-style: inset;">
+<p> 91.9493 </p>
+</td>
+<td style="border-style: inset;">
+<p> 196.647 </p>
+</td>
+<td style="border-style: inset;">
+<p> 112.37 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1178.19 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 379.314 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 427.072 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 303.075 </p>
+</td>
+<td style="border-style: inset;">
+<p> 173.186 </p>
+</td>
+<td style="border-style: inset;">
+<p> 730.147 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 311.454 </p>
+</td>
+<td style="border-style: inset;">
+<p> 351.639 </p>
+</td>
+<td style="border-style: inset;">
+<p> 323.004 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1078.48 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 38.4374 </p>
+</td>
+<td style="border-style: inset;">
+<p> 91.1666 </p>
+</td>
+<td style="border-style: inset;">
+<p> 194.605 </p>
+</td>
+<td style="border-style: inset;">
+<p> 111.203 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1273.08 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 359.345 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 407.065 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 257.224 </p>
+</td>
+<td style="border-style: inset;">
+<p> 146.985 </p>
+</td>
+<td style="border-style: inset;">
+<p> 664.289 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 313.07 </p>
+</td>
+<td style="border-style: inset;">
+<p> 209.367 </p>
+</td>
+<td style="border-style: inset;">
+<p> 296.024 </p>
+</td>
+<td style="border-style: inset;">
+<p> 911.593 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 36.0572 </p>
+</td>
+<td style="border-style: inset;">
+<p> 84.9621 </p>
+</td>
+<td style="border-style: inset;">
+<p> 185.858 </p>
+</td>
+<td style="border-style: inset;">
+<p> 106.205 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1097.45 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 345.602 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 393.326 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 191.223 </p>
+</td>
+<td style="border-style: inset;">
+<p> 109.27 </p>
+</td>
+<td style="border-style: inset;">
+<p> 584.549 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 321.139 </p>
+</td>
+<td style="border-style: inset;">
+<p> 318.597 </p>
+</td>
+<td style="border-style: inset;">
+<p> 293.615 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1024.85 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 38.7886 </p>
+</td>
+<td style="border-style: inset;">
+<p> 85.5507 </p>
+</td>
+<td style="border-style: inset;">
+<p> 189.268 </p>
+</td>
+<td style="border-style: inset;">
+<p> 108.153 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1214.11 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 200 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 323.828 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 371.735 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 153.241 </p>
+</td>
+<td style="border-style: inset;">
+<p> 87.5663 </p>
+</td>
+<td style="border-style: inset;">
+<p> 524.976 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1686.12 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1531.96 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1857.58 </p>
+</td>
+<td style="border-style: inset;">
+<p> 5390.37 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 66.1551 </p>
+</td>
+<td style="border-style: inset;">
+<p> 111.682 </p>
+</td>
+<td style="border-style: inset;">
+<p> 259.685 </p>
+</td>
+<td style="border-style: inset;">
+<p> 259.685 </p>
+</td>
+<td style="border-style: inset;">
+<p> 5650.06 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 2632.37 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 2752.13 </p>
+</td>
+<td style="border-style: inset;">
+<p> 0.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1736.5 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1736.5 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4488.63 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1689.17 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1429.58 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1755.6 </p>
+</td>
+<td style="border-style: inset;">
+<p> 5187.26 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 104.483 </p>
+</td>
+<td style="border-style: inset;">
+<p> 193.845 </p>
+</td>
+<td style="border-style: inset;">
+<p> 443.039 </p>
+</td>
+<td style="border-style: inset;">
+<p> 253.165 </p>
+</td>
+<td style="border-style: inset;">
+<p> 5630.29 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1840.6 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1960.93 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1156.11 </p>
+</td>
+<td style="border-style: inset;">
+<p> 660.635 </p>
+</td>
+<td style="border-style: inset;">
+<p> 3117.04 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1694.44 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1339.6 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1660.19 </p>
+</td>
+<td style="border-style: inset;">
+<p> 5004.73 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 97.2418 </p>
+</td>
+<td style="border-style: inset;">
+<p> 186.47 </p>
+</td>
+<td style="border-style: inset;">
+<p> 428.007 </p>
+</td>
+<td style="border-style: inset;">
+<p> 244.575 </p>
+</td>
+<td style="border-style: inset;">
+<p> 5432.73 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 8 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1674.52 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1795.06 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 658.463 </p>
+</td>
+<td style="border-style: inset;">
+<p> 376.265 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2453.52 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1721.26 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1230.13 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1512.86 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4769.87 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 90.4288 </p>
+</td>
+<td style="border-style: inset;">
+<p> 175.253 </p>
+</td>
+<td style="border-style: inset;">
+<p> 409.568 </p>
+</td>
+<td style="border-style: inset;">
+<p> 234.039 </p>
+</td>
+<td style="border-style: inset;">
+<p> 5179.44 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 16 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1563.2 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1683.68 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 422.92 </p>
+</td>
+<td style="border-style: inset;">
+<p> 241.669 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2106.6 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1725.48 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1183.68 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1467.61 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4680.46 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 90.5425 </p>
+</td>
+<td style="border-style: inset;">
+<p> 170.708 </p>
+</td>
+<td style="border-style: inset;">
+<p> 405.248 </p>
+</td>
+<td style="border-style: inset;">
+<p> 231.57 </p>
+</td>
+<td style="border-style: inset;">
+<p> 5085.71 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 20 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1567.65 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1688.04 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 373.04 </p>
+</td>
+<td style="border-style: inset;">
+<p> 213.166 </p>
+</td>
+<td style="border-style: inset;">
+<p> 2061.08 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> <FONT COLOR="Red">NConv </FONT> </p>
+</td>
+<td style="border-style: inset;">
+<p> 1779.17 </p>
+</td>
+<td style="border-style: inset;">
+<p> 975.004 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1364.82 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4438.04 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1000.25 </p>
+</td>
+<td style="border-style: inset;">
+<p> 41330.8 </p>
+</td>
+<td style="border-style: inset;">
+<p> 72071.4 </p>
+</td>
+<td style="border-style: inset;">
+<p> 176319 </p>
+</td>
+<td style="border-style: inset;">
+<p> 176.275 </p>
+</td>
+<td style="border-style: inset;">
+<p> 180757 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 32 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1519.61 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1640.26 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 306.138 </p>
+</td>
+<td style="border-style: inset;">
+<p> 174.936 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1946.4 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1810.88 </p>
+</td>
+<td style="border-style: inset;">
+<p> 958.235 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1168.44 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4227.22 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 82.4225 </p>
+</td>
+<td style="border-style: inset;">
+<p> 146.198 </p>
+</td>
+<td style="border-style: inset;">
+<p> 372.312 </p>
+</td>
+<td style="border-style: inset;">
+<p> 212.75 </p>
+</td>
+<td style="border-style: inset;">
+<p> 4599.53 </p>
+</td>
+</tr>
+<tr valign=top>
+<td style="border-style: inset;">
+<p> 200000 </p>
+</td>
+<td style="border-style: inset;">
+<p> 500 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1 </p>
+</td>
+<td style="border-style: inset;">
+<p> 50 </p>
+</td>
+<td style="border-style: inset;">
+<p> OK </p>
+</td>
+<td style="border-style: inset;">
+<p> 1492.2 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 1612.55 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1.75 </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p>  </p>
+</td>
+<td style="border-style: inset;">
+<p> 266.378 </p>
+</td>
+<td style="border-style: inset;">
+<p> 152.216 </p>
+</td>
+<td style="border-style: inset;">
+<p> 1878.92 </p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</body></html>
+
