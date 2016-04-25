@@ -6,6 +6,9 @@ title: Nightly
 ### Nightly
 
 
+[4-25-2016 Double Results BCR Test](http://sapgpu.sbel.org/nightly_build/2016_4_25_double_results_new_nightly_test.html)
+
+
 [4-24-2016 Double Results BCR Test](http://sapgpu.sbel.org/nightly_build/2016_4_24_double_results_new_nightly_test.html)
 
 
